@@ -9,7 +9,7 @@ get_header(); ?>
         <div class="hero__video-wrap">
             <div id="video-player" class="hero__video">
                 <video id="hero-video" autoplay muted>
-                    <source src="<?php echo get_template_directory_uri()?>/assets/vid/HP-video.mp4" type="video/mp4">
+                    <source src="<?php echo get_template_directory_uri()?>/assets/vid/SJI-Opening.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
