@@ -1,0 +1,72 @@
+.split-accordion {
+    padding: 50px 0;
+
+    @include break(lg) {
+        padding: 30px 0;
+    }
+
+    &__img {
+        width: 100%;
+    }
+}
+
+//Override Bootstrap V5 styles
+.accordion {
+    background-color: transparent;
+
+    &-item,
+    &-button,
+    &-button:not(.collapsed) {
+        background-color: transparent;
+        border: 0;
+        border-radius: 0 !important;
+        box-shadow: none;
+        color: $black;
+    }
+
+    &-item {
+        background-color: $grey-light;
+        border-bottom: 9px solid #fff;
+    }
+
+    &-button {
+        font-family: $font-primary;
+        font-size: 1.727rem;
+        padding: 7px 30px;
+        font-weight: 400;
+
+        @include break(lg) {
+            padding: 15px 30px;
+        }
+
+        &:hover {
+            opacity: .25;
+
+            @include break(lg) {
+                opacity: 1;
+            }
+        }
+
+        &:after {
+            display: none;
+        }
+    }
+
+    &-body {
+        font-size: 1.590rem;
+        height: 345px;
+        padding: 13px 30px;
+        line-height: 45px;
+        font-family: $font-primary;
+
+        @include break(xxl) {
+            height: 255px;
+            line-height: 32px;
+            font-size: 1.25rem;
+        }
+    }
+
+    @include break(lg) {
+        margin: 0 0 30px;
+    }
+}

@@ -1,0 +1,22 @@
+.linked-feature {
+    background: $grey-cool;
+    padding: 90px 0 50px;
+
+    img {
+        height: auto;
+        margin: 0;
+        width: 100%;
+    }
+
+    .btn {
+        color: $white;
+        margin-bottom: 0px;
+        gap: 10px;
+
+        &:before {
+            background-image: url('../img/asterisk-sm-white.svg');
+            width: 22px;
+            height: 22px;
+        }
+    }
+}

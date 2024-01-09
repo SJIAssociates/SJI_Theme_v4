@@ -1,0 +1,122 @@
+.video-module {
+    margin: 0 0 50px;
+
+    @include break(lg) {
+        margin: 0 0 20px;
+    }
+
+    &.pb-6 {
+        padding-bottom: 100px;
+    }
+
+    &.full-width {
+        .video-module__container {
+            width: 100%;
+
+            .browser-bar {
+                display: none;
+            }
+            .btn--asterisk {
+                display: none;
+            }
+        }
+    }
+    &.container {
+        margin: 0 auto;
+
+        .browser-bar {
+            display: none;
+        }
+        .btn--asterisk {
+            display: none;
+        }
+    }
+    &.left-align {
+        max-width: 70%;
+
+        @include break(lg) {
+            max-width: 100%;
+        }
+    }
+    &.browser {
+        .video-module__container {
+            padding: 90px 90px 15px;
+            background-color: $grey-cool;
+
+            @include break(lg) {
+                padding: 18px 18px 5px;
+            }
+
+            .browser-bar {
+                display: block;
+                background-color: $browser-grey;
+                height: 30px;
+                border-top-right-radius: 10px;
+                border-top-left-radius: 10px;
+
+                @include break(lg) {
+                    height: 12px;
+                    border-top-right-radius: 4px;
+                    border-top-left-radius: 4px;
+                }
+            }
+            video {
+                    border-bottom-left-radius: 15px;
+                    border-bottom-right-radius: 15px;
+
+                    @include break(lg) {
+                        border-bottom-left-radius: 4px;
+                        border-bottom-right-radius: 4px;
+                    }
+            }
+            .btn--asterisk {
+                    display: flex;
+                    gap: 10px;
+
+                a {
+                    color: $actual-white;
+
+                    @include break(lg) {
+                        font-size: .7rem;
+                        margin: 0 .5rem 0;
+                    }
+                }
+
+                &:before {
+                    background-image: url('../img/asterisk-sm-white.svg');
+                    height: 22px;
+                    width: 22px;
+
+                    @include break(lg) {
+                        height: 12px;
+                        width: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    &__vid {
+        display: block;
+        height: auto;
+        width: 100%;
+
+        &.vid-desktop {
+            @include break(lg) {
+                display: none;
+            }
+        }
+
+        &.vid-mobile {
+            display: none;
+
+            @include break(lg) {
+                display: block;
+            }
+        }
+    }
+
+    &.pb-6 {
+        padding-bottom: 200px;
+    }
+}

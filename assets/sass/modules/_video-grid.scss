@@ -1,0 +1,24 @@
+.video-grid {
+    padding: 75px 0;
+    margin-bottom: 50px;
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+        justify-content: center;
+    }
+
+    &__item {
+        flex-basis: calc(42% - 18px);
+        margin: 0;
+
+        video {
+            @include imgObjectFit;
+        }
+
+        @include break(lg) {
+            flex-basis: calc(50% - 18px);
+        }
+    }
+}

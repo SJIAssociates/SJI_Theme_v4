@@ -1,0 +1,29 @@
+.grey-columns {
+    padding: 100px 0;
+
+    strong {
+        display: block;
+        font-size: 0.772rem;
+        margin: 0 0 30px;
+        text-transform: uppercase;
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 24px;
+
+        >div {
+            flex-basis: 100%;
+        }
+
+        @include break(lg) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__item {
+        background: $grey-light;
+        padding: 95px 50px;
+    }
+}

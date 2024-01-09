@@ -1,0 +1,125 @@
+.category-grid {
+    padding: 100px 0;
+
+    .js_filter_hide {
+        display: none !important;
+    }
+
+    &__filters {
+        @include cleanUl;
+        align-items: center;
+        display: flex;
+        gap: 40px;
+        margin: 0 0 32px;
+
+        @include break(lg) {
+            margin: 0;
+        }
+
+        button {
+            background: transparent;
+            border: 0;
+            font-weight: normal;
+            padding: 0;
+            text-transform: capitalize;
+            color: $black;
+
+            &.js-active {
+                font-weight: 900;
+            }
+        }
+        
+        .fa-plus {
+            display: none;
+        }
+        @include break(lg) {
+            display: block;
+      
+            .fa-plus,
+            .fa-minus {
+                display: inline;
+                font-size: 15px;
+                margin-left: 8px;
+            }
+            li {
+              &.mobile-menu-closed {
+                display: none;
+              }
+            }
+        }
+    }
+
+    &__grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(5, 1fr);
+
+        @include break(xl) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    &__post {
+        background: none;
+        border: none;
+        display: block;
+        height: auto;
+        width: 100%;
+        overflow: hidden;
+        text-decoration: none;
+        padding: 0;
+
+
+        img,
+        &__placeholder {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: $transition;
+
+        }
+
+        &__placeholder {
+            align-items: center;
+            background: $orange;
+            color: $white;
+            display: flex;
+            font-family: $font-secondary;
+            font-size: 3rem;
+            font-weight: 600;
+            justify-content: center;
+        }
+
+        &:hover img,
+        &:hover &__placeholder {
+            transform: scale(1.03);
+        }
+
+        // &:nth-of-type(6),
+        // &:nth-of-type(16),
+        &--big {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: auto;
+
+            @include break(xl) {
+                grid-column: span 1;
+                grid-row: span 1;
+            }
+        }
+        &--small {
+            grid-column: span 1;
+            grid-row: span 1;
+        }
+
+        .hero__banner {
+            margin: 0;
+            transition: $transition;
+            min-height: 100%;
+
+            &:hover {
+                transform: scale(1.03);
+            }
+        }
+    }
+}

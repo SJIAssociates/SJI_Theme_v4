@@ -1,0 +1,59 @@
+.careers-grid {
+    padding: 100px 0;
+
+    h3 {
+        margin: 0 0 30px;
+    }
+
+    a {
+        color: $black;
+        text-decoration: none;
+    }
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+
+        @include break(lg) {
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        background-color: $white;
+        flex-basis: 32%;
+        padding: 40px 40px 80px;
+        position: relative;
+
+        @include break(lg) {
+            padding: 40px 20px 80px;
+        }
+
+        h3 {
+            text-transform: capitalize;
+        }
+        p {
+            margin: 0 0 50px;
+            line-height: 1.27;
+            &.careers-grid__item__hours {
+                color: $orange;
+                font-size: 0.7rem;
+                font-weight: 800;
+                margin: 0 0 24px;
+                text-transform: uppercase;
+            }
+        }
+        .btn--asterisk {
+            margin: 0;
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+        }
+    }
+}
+
+.careers__title {
+    max-width: 890px;
+    display: block;
+}

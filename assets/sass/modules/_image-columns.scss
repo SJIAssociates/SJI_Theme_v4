@@ -1,0 +1,53 @@
+.image-columns {
+    padding: 100px 0;
+    
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        @include break(lg) {
+            flex-direction: column;
+        }
+    }
+
+    &__column {
+        margin: 0;
+
+        img {
+            @include imgObjectFit;
+        }
+
+        @include break(lg) {
+            flex-basis: calc(50% - 18px);
+        }
+
+        @include break(md) {
+            flex-basis: 100%;
+        }
+    }
+    &.layout-style {
+        
+        &__standard {
+            
+            .image-columns__grid {
+                gap: 24px;
+            }
+        
+            .image-columns__column {
+                flex-basis: calc(25% - 18px);
+            }
+        }
+        &__two {
+            padding: 0;
+            
+            .image-columns__grid {
+                gap: 24px;
+            }
+        
+            .image-columns__column {
+                flex-basis: calc(50% - 12px);
+            }
+        }
+    }
+}

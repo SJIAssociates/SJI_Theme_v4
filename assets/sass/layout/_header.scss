@@ -1,0 +1,19 @@
+.global-header {
+  background-color: #fff;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+
+  &--grey {
+    background-color: $white;
+  }
+
+  &.nav-up {
+    top: -200px;
+    transition: top ease-in-out 0.5s;
+  }
+
+  &.nav-down {
+    top: 0;
+  }
+}

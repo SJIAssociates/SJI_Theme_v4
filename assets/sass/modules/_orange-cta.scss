@@ -1,0 +1,55 @@
+.cta {
+    background: $orange;
+    color: $white;
+    padding: 100px 0;
+
+    @include break(lg) {
+        padding: 50px 0;
+    }
+
+    a {
+        color: $white;
+    }
+
+    h2 {
+        font-size: 1.7727rem;
+        font-weight: 800;
+        max-width: 75%;
+        line-height: 42px;
+
+        @include break(lg) {
+            max-width: 100%;
+            font-size: 1.25rem;
+            line-height: 35px;
+        }
+
+    }
+    &__btn {
+        font-size: 1.7727rem;
+        font-family: $font-literata;
+        font-weight: 800;
+        text-decoration: underline;
+
+        @include break(lg) {
+            font-size: 1.25rem;
+        }
+    }
+    h6 {
+        font-size: 0.6rem;
+        font-family: $font-primary;
+        font-weight: 400;
+        color: $actual-white;
+        text-transform: uppercase;
+    }
+    &.career__cta {
+        p {
+            font-size: clamp(20px, 3vw ,40px);
+            font-weight: 900;
+            line-height: 1;
+        }
+        a {
+            margin-top: 0;
+            line-height: 1;
+        }
+    }
+}

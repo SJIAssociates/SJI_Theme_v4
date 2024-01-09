@@ -1,0 +1,367 @@
+.post-grid {
+  padding: 100px 0;
+
+  &__intro {
+    margin: 0 0 72px;
+
+    &__h2 {
+      color: $orange;
+      font-size: 1.772rem;
+      text-transform: lowercase;
+    }
+  }
+
+  &__filters {
+    @include cleanUl;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    margin: 0 0 32px;
+
+    @include break(lg) {
+      margin: 0;
+    }
+
+    button {
+      background: transparent;
+      border: 0;
+      font-weight: normal;
+      padding: 0;
+      text-transform: capitalize;
+      color: $black;
+
+      &.js-active {
+        font-weight: 900;
+      }
+    }
+
+    .fa-plus {
+      display: none;
+    }
+    @include break(lg) {
+      display: block;
+
+      .fa-plus,
+      .fa-minus {
+          display: inline;
+          font-size: 15px;
+          margin-left: 8px;
+      }
+      li {
+        &.mobile-menu-closed {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, 1fr);
+    //grid-template-rows: repeat(5, 425px);
+    position: relative;
+
+    @include break(lg) {
+      gap: 0.75rem;
+    }
+
+    .btn--swap {
+      border-top: 24px solid $white;
+      bottom: 0;
+      height: 96px;
+      left: 0;
+      position: absolute;
+      width: calc(50% - 12px);
+
+      @include break(lg) {
+        width: 100%;
+      }
+    }
+
+    @include break(lg) {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: auto;
+    }
+  }
+
+  &__post {
+    overflow: hidden;
+    position: relative;
+
+    @include break(lg) {
+      aspect-ratio: 1 / 1;
+    }
+
+    a {
+      text-decoration: none;
+
+      > * {
+        transition: $transition;
+      }
+    }
+    &.landscape {
+      .hero__banner {
+        min-height: 410px;
+        grid-row: span 1;
+
+        video {
+          height: 410px;
+          object-fit: cover;
+        }
+
+        @include break(lg) {
+          min-height: 100%;
+        }
+      }
+    }
+
+    &.portrait {
+      grid-row: span 2;
+
+      .hero__banner {
+        min-height: 103vh;
+
+        video {
+          height: 103vh;
+          object-fit: cover;
+        }
+
+        @include break(lg) {
+          min-height: 100%;
+        }
+      }
+    }
+
+    .hero__banner {
+      margin: 0;
+
+
+      @include break(lg) {
+        min-height: 100%;
+      }
+    }
+
+    .grid-image-desktop {
+      display: block;
+    }
+    .grid-image-mobile {
+      display: none;
+    }
+
+    @include break(lg) {
+      .grid-image-desktop {
+        display: none;
+      }
+      .grid-image-mobile {
+        display: block;
+      }
+    }
+
+    img,
+    &__placeholder {
+      @include imgObjectFit;
+    }
+
+    &__placeholder {
+      align-items: center;
+      background: $orange;
+      color: $white;
+      display: flex;
+      font-family: $font-secondary;
+      font-size: 3rem;
+      font-weight: 600;
+      justify-content: center;
+    }
+
+    &__overlay {
+      background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5) 100%,
+        transparent 100%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      padding: 36px;
+      pointer-events: none;
+      position: absolute;
+      top: 0;
+      width: 100%;
+
+      @include break(lg) {
+        background: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5) 100%,
+        transparent 100%,
+        rgba(0, 0, 0, 0.5) 100%
+      );
+        opacity: 1;
+        padding: 36px 18px;
+      }
+
+      * {
+        color: $white;
+      }
+    }
+
+    &__info {
+      position: absolute;
+      bottom: -100px;
+      margin-bottom: 36px;
+      transition: $transition;
+
+      @include break(lg) {
+        margin-bottom: 25px;
+      }
+
+      h3 {
+        font-size: 0.909rem;
+        margin: 0;
+        text-transform: uppercase;
+
+        span {
+          display: block;
+          text-transform: none;
+        }
+      }
+      p {
+        font-size: 0.7rem;
+        margin-bottom: 0;
+      }
+
+      ul {
+        @include cleanUl;
+        display: flex;
+        gap: 10px;
+
+        li {
+          font-size: 0.681rem;
+        }
+      }
+
+      @include break(lg) {
+        bottom: 0;
+      }
+    }
+
+    &:hover .hero__banner {
+      transform: scale(1.03);
+    }
+
+    &:hover &__overlay {
+      opacity: 1;
+    }
+
+    &:hover &__info {
+      bottom: 0;
+    }
+  }
+  #cs_view_more_projects {
+    text-decoration: none;
+    align-self: end;
+
+    &.view-more-no {
+      display: none !important;
+    }
+    &.view-more-yes {
+      display: block !important;
+      position: absolute;
+      left: 0;
+      bottom: -55px;
+
+      @include break(xl) {
+        bottom: 50px;
+      }
+
+      @include break(lg) {
+        bottom: -55px;
+      }
+    }
+
+    .btn--asterisk {
+      text-decoration: none;
+      margin-bottom: 0;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  #cs_see_more_work {
+    text-decoration: none;
+
+    &.d-none {
+      display: none;
+    }
+    &.d-block {
+      display: block;
+    }
+
+    .btn--asterisk {
+      text-decoration: none;
+      justify-content: flex-end;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  #cs_view_more_key_art {
+    bottom: -200px;
+    width: 100%;
+    text-decoration: none;
+    grid-row: span 1;
+    height: 350px;
+    min-height: 350px;
+    overflow: hidden;
+    position: relative;
+    background-image: url("../../assets/img/view-all-key-art.png");
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .btn--asterisk {
+      text-decoration: none;
+      justify-content: flex-end;
+      color: $actual-white;
+      position: relative;
+      z-index: 2;
+      font-size: 1.9090909rem;
+      &::before {
+        height: 66px;
+        width: 66px;
+      }
+    }
+    .view-more__overlay {
+      z-index: 0;
+      background: $black;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.7;
+      transition: background 0.5s;
+    }
+    &:hover {
+      .view-more__overlay {
+        background: $orange;
+      }
+      .btn--asterisk {
+        &::before {
+          filter: brightness(1000);
+        }
+      }
+    }
+  }
+  &--small-margins {
+    padding-top: 0;
+    #cs_see_more_work {
+      .btn.btn--asterisk {
+        margin-top: 0;
+      }
+    }
+  }
+}

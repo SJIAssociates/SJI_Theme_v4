@@ -1,0 +1,49 @@
+ .global-main {
+     padding-top: 100px;
+
+     >* {
+         background: #fff;
+         position: relative;
+     }
+     &--grey {
+        background: $white;
+        >* {
+            background: $white;
+            position: relative;
+        }
+     }
+ }
+ .bg-color {
+    &__white {
+        background-color: $actual-white;
+    }
+    &__grey {
+        background-color: $white;
+    }
+    &__dbrown {
+        background-color: $dark-brown;
+    }
+ }
+ .single-career {
+    .single-career-title {
+        margin: 135px 0 0;
+    }
+ }
+
+ .container {
+    @include break(xxl-min) {
+        max-width: 1500px;
+    }
+ }
+
+ .mobile-only {
+    display: none;
+    @include break(sm) {
+        display: block;
+    }
+ }
+ .desktop-only {
+    @include break(sm) {
+        display: none;
+    }
+ }

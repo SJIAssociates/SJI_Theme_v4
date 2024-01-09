@@ -1,0 +1,150 @@
+.modal {
+    background: rgba(0, 0, 0, .5);
+    position: fixed;
+
+    .btn-close {
+        position: absolute;
+        right: 30px;
+        top: 30px;
+    }
+
+    .modal-content {
+        border-radius: 0;
+    }
+
+    .modal-body {
+        display: flex;
+        padding: 0;
+    }
+
+    &__slider-wrap {
+        flex-basis: 50%;
+        height: 730px;
+        width: 50%;
+    }
+
+    &__slider {
+        flex-basis: 50%;
+        height: 730px;
+        position: relative;
+
+        figure {
+            height: 100%;
+            margin: 0;
+            width: 100%;
+
+            img {
+                @include imgObjectFit;
+            }
+        }
+
+        .slick-list,
+        .slick-track {
+            height: 100%;
+        }
+
+        .slick-slide {
+            height: 100%;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .slick-arrow {
+            background: transparent;
+            background-image: url(../img/slick-arrow.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            border: none;
+            bottom: 200px;
+            color: transparent;
+            height: 16px;
+            right: -89px;
+            position: absolute;
+            width: 65px;
+
+            &.slick-next {
+                right: -173px;
+                transform: rotate(180deg);
+            }
+        }
+
+    }
+
+    &__content {
+        padding: 187px 24px 24px;
+    }
+
+    &__project {
+        font-size: 2.954rem;
+        font-weight: 800;
+        line-height: 1;
+        margin: 0 0 10px;
+
+        @include break(xl) {
+            font-size: 1.75rem;
+        }
+    }
+
+    &__client {
+        color: $orange;
+        font-size: 1.772rem;
+        font-weight: 800;
+        line-height: 1;
+        margin: 0 0 10px;
+
+        @include break(xl) {
+            font-size: 1.2rem;
+        }
+    }
+
+    &__categories {
+        font-size: 1.227rem;
+
+        @include break(xl) {
+            font-size: 1rem;
+        }
+    }
+
+    &#artModal {
+        .slick-slide {
+            figure {
+                img {
+                    object-fit: contain;
+                }
+            }
+        }
+        @include break(lg) {
+            .modal-body {
+                flex-direction: column;
+
+                .modal__slider-wrap {
+                    width: 90%;
+                    align-self: center;
+                    order: 1;
+
+                    .modal__slider {
+                            height: 400px;
+                            margin-top: 75px;
+                    }
+
+                    .slick-arrow {
+                        bottom: -35px;
+
+                        &.slick-next {
+                            margin-right: 50px;
+                            right: 0;
+                        }
+                        &.slick-prev {
+                            margin-left: 50px;
+                            left: 0;
+                        }
+                    }
+                }
+                .modal__content {
+                    order: 2;
+                    padding: 50px 24px 24px;
+                }
+            }
+        }
+    }
+}

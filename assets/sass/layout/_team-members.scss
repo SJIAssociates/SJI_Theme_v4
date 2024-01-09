@@ -1,0 +1,84 @@
+.team-collage {
+    padding: 40px 0 30px;
+
+    &__thumbnail {
+        height: auto;
+        overflow: hidden;
+
+        img {
+            @include imgObjectFit;
+        }
+
+        @include break(lg) {
+            margin: 0 0 23px;
+        }
+    }
+
+    &__grid {
+        display: grid;
+        gap: 23px;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+
+        @include break(lg) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+        }
+    }
+
+    &__item {
+        overflow: hidden;
+
+        strong {
+            display: block;
+            font-size: 0.772rem;
+            margin: 0 0 30px
+        }
+
+        p {
+            margin: 0;
+        }
+
+        img {
+            @include imgObjectFit;
+        }
+
+        &:nth-of-type(1) {
+            grid-column: span 9;
+
+            @include break(lg) {
+                grid-column: span 2;
+            }
+        }
+
+        &:nth-of-type(2) {
+            grid-column: span 3;
+
+            @include break(lg) {
+                grid-column: span 1;
+            }
+        }
+
+        &:nth-of-type(3) {
+            grid-column-start: 9;
+            grid-column-end: 13;
+
+            @include break(lg) {
+                grid-column: span 1;
+            }
+        }
+
+        &:nth-of-type(4) {
+            background: $grey-light;
+            grid-column-start: 1;
+            grid-column-end: 9;
+            grid-row-start: 2;
+            padding: 40px 24px;
+
+            @include break(lg) {
+                grid-column: span 2;
+                grid-row-start: 3;
+            }
+        }
+    }
+}

@@ -1,0 +1,161 @@
+.contact {
+    padding: 0 0 90px;
+
+    h1 {
+        color: $orange;
+        font-family: $font-literata;
+        font-size: 4.3181rem;
+        text-transform: lowercase;
+        padding-bottom: 90px;
+        position: relative;
+        z-index: 2;
+
+        @include break(lg) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+
+    h2 {
+        .h1 {
+            font-size: 5vw;
+        }
+    }
+    a,
+    a:hover {
+        color: $black;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .contact-form {
+        z-index: 12;
+
+        @include break(lg) {
+            order: 2;
+        }
+
+        .frm_email,
+        .frm_phone {
+            width: 50%;
+        }
+        .frm_email {
+            float: left;
+            padding-right: 5px;
+        }
+        .frm_phone {
+            float: right;
+            padding-left: 5px;
+        }
+        .dz-message {
+            position: relative;
+            .frm-svg-icon {
+                position: absolute;
+                width: 40px;
+                margin-left: auto;
+                margin-right: auto;
+                left: 0;
+                right: 0;
+                top: 25px;
+            }
+        }
+    }
+    &__info {
+        display: flex;
+        position: relative;
+        z-index: 12;
+
+        @include break(lg) {
+            z-index: 0;
+        }
+
+        >* {
+            flex-basis: 100%;
+        }
+
+        p,
+        address {
+            margin: 0 0 30px;
+        }
+
+        strong {
+            font-size: 0.8rem;
+            line-height: 1rem;
+            font-weight: 800;
+            margin: 0 0 15px;
+            text-transform: uppercase;
+        }
+
+        img {
+            height: auto;
+            width: 100%;
+
+            @include break(lg) {
+                order: 2;
+            }
+        }
+
+        &__copy {
+            padding: 24px;
+            background-color: $actual-white;
+
+            p {
+
+                span {
+                    font-size: 0.9090rem;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                }
+            }
+
+            @include break(lg) {
+                order: 1;
+            }
+        }
+
+        @include break(lg) {
+            flex-direction: column;
+        }
+    }
+    .frm_submit {
+        float: right;
+        z-index: 15;
+        button {
+            color: $black;
+        }
+    }
+    .slider-container {
+        width: 34%;
+        position: absolute;
+        top: 125px;
+        left: 42%;
+        z-index: 1;
+
+        @include break(lg) {
+            display: none;
+        }
+        @include break(xl) {
+            top: 300px;
+        }
+
+        .js-slick-contact {
+            z-index: 10;
+
+            .slick-track {
+                width: 100%;
+
+                .slick-slide {
+                    width: 100%;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

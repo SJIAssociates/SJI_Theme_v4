@@ -1,0 +1,53 @@
+.awards {
+    padding: 100px 0 200px;
+
+    @include break(lg) {
+        padding: 0 0 100px;
+    }
+
+    &__grid {
+        gap: 15px;
+
+        @include break(lg) {
+            justify-content: center;
+        }
+
+        div {
+            background-color: $orange;
+            color: $actual-white;
+            align-items: center;
+            padding: 0;
+
+            @include break(lg) {
+                height: 150px;
+                width: 150px;
+            }
+
+            h2 {
+                text-align: center;
+                width: 100%;
+                font-size: 1.090rem;
+                margin-bottom: 0;
+
+                @include break(lg) {
+                    font-size: 2.25rem;
+                }
+            }
+        }
+    }
+
+    &__item {
+        margin: 0;
+        padding: 0;
+
+        @include break(lg) {
+            height: 150px;
+            width: 150px;
+        }
+
+        img {
+            @include imgObjectFit;
+        }
+
+    }
+}

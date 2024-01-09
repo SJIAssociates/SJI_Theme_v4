@@ -1,0 +1,21 @@
+.infinite-slider {
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding: 120px 0;
+
+    &__slider {
+        margin: 0 0 24px;
+        width: 100%;
+
+        &:last-of-type() {
+            margin: 0;
+        }
+    }
+
+    .slick-slide {
+        margin-right: 24px;
+    }
+}

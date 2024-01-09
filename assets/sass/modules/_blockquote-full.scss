@@ -1,0 +1,29 @@
+.blockquote-full {
+    background: $white;
+    padding: 50px 0;
+    text-align: center;
+
+    blockquote {
+        color: $black;
+        font-size: 1rem;
+        line-height: 1.27rem;
+        margin: 0;
+        padding: 0;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    cite {
+        color: $grey;
+        display: block;
+        margin: 50px auto 0;
+        text-transform: uppercase;
+
+        strong {
+            display: block;
+            font-size: 600;
+        }
+    }
+}

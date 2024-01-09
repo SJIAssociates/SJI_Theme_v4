@@ -1,0 +1,42 @@
+.horizontal-scroll-grid {
+    padding: 0;
+    overflow: hidden;
+
+    //@include break(lg) {
+    //    max-height: 680px;
+    //    padding: 60px 0;
+
+       // @include break(lg) {
+       //     max-height: 340px;
+       // }
+   // }
+    .panel-container {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+       // @include break(lg) {
+        //    height: 220px;
+        //    max-height: 220px;
+       // }
+    }
+    padding: 120px 0;
+
+    &.desktop {
+        display: block;
+
+       // @include break(lg) {
+       //     display: none;
+       // }
+    }
+    &__row-1, &__row-2 {
+        display: flex;
+        gap: 24px;
+        padding-left: 100px;
+
+        @include break(lg) {
+            padding-left: 0;
+           // height: 50%;
+        }
+    }
+}

@@ -1,0 +1,52 @@
+.captioned-banner {
+    padding: 100px 0;
+
+    &.padding-top-none {
+        padding: 0 0 50px;
+    }
+    &.padding-bottom-none {
+        padding: 100px 0 0;
+    }
+    &.padding-tb-none {
+        padding: 0;
+    }
+
+    h3 {
+        margin: 0 0 20px;
+        color: $orange;
+
+        @include break(lg) {
+            font-size: 1.27rem;
+        }
+    }
+    p {
+        line-height: 1.27rem;
+    }
+
+    img {
+        width: 100%;
+
+        @include break(lg) {
+            margin: 30px 0;
+        }
+    }
+    &__videos {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 100px;
+        margin-bottom: 60px;
+        video {
+            width: 33%;
+        }
+    }
+    @include break(md) {
+        &__videos {
+            margin-top: 50px;
+            margin-bottom: 30px;
+            flex-direction: column;
+            video {
+                width: 100%;
+            }
+        }
+    }
+}

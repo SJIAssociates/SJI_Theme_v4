@@ -1,0 +1,32 @@
+.testimonials {
+    background-color: $orange;
+    color: $actual-white;
+    padding: 62px 0 40px;
+
+    h3 {
+        color: $actual-white;
+        font-size: 1.5rem;
+        font-weight: 400;
+        padding-bottom: 25px;
+        line-height:  1.35em;
+
+        @include break(lg) {
+            font-size: 1.2rem;
+            line-height: 34px;
+        }
+    }
+    p {
+        font-size: 0.8rem;
+        line-height: 1rem;
+        font-weight: 400;
+        text-transform: uppercase;
+
+        span {
+            font-weight: 800;
+            padding-right: 5px;
+        }
+    }
+    &#lg-margin-top {
+        margin-top: 100px;
+    }
+}
