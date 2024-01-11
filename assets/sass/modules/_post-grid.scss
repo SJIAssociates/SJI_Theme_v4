@@ -141,6 +141,11 @@
       grid-row: span 2;
       aspect-ratio: 4/5.5;
 
+      @include break(lg) {
+        aspect-ratio: 1 / 1;
+        grid-row: span 1;
+      }   
+  
       .hero__banner {
         min-height: 103vh;
         min-height: 100%;
