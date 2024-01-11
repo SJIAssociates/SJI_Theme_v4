@@ -21,9 +21,9 @@ get_header(); ?>
             </div>
         </div>
         <?php $hero_banner_asset = get_field( 'hero_banner_asset' ); 
-        $asset_url = esc_url( $hero_banner_asset['url'] );
-        $asset_name = esc_url( $hero_banner_asset['filename'] );
-        $filetype = wp_check_filetype($asset_name)['ext'];
+            $asset_url = esc_url( $hero_banner_asset['url'] );
+            $asset_name = esc_url( $hero_banner_asset['filename'] );
+            $filetype = wp_check_filetype($asset_name)['ext'];
         ?>
         <?php if ( $hero_banner_asset ) : ?>
             <?php if (($filetype == "mp4") || ($filetype == "webm")) { ?>
