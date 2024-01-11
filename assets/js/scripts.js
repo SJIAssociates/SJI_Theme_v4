@@ -489,7 +489,7 @@ jQuery(document).ready(function ($) {
     "elegantly<br class='mobile-only'> simple."
   ];
   let counter2 = 0;
-  const wordTimer2 = setInterval(fancyTextApproach, 800);
+  const wordTimer2 = setInterval(fancyTextApproach, 1000);
   function fancyTextApproach() {
     $('#word-swap-approach').fadeOut(800, function() {
       $('#word-swap-approach').html(wordSwapApproach[counter2]);

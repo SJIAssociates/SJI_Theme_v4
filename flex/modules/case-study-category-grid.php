@@ -64,7 +64,14 @@ function renderSmallCard($card)
 ?>
     <button data-src="<?php if ($card['images']) :  foreach ($card['images'] as $modal_gallery_image) : echo esc_url($modal_gallery_image['sizes']['large']) . ',';
                             endforeach;
-                        endif; ?>" class="category-grid__post category-grid__post--small js-bs-modal js_filter_item <?= $card['category'] ?>" data-bs-toggle="modal" data-bs-target="#artModal" data-title="<?= $card['title'] ?>" data-client="<?= $card['client'] ?>" data-categories="<?= $card['category_for_display'] ?>" data-src="">
+                        endif; ?>" 
+                        class="category-grid__post category-grid__post--small js-bs-modal js_filter_item <? $card['category'] ?>"
+                        data-bs-toggle="modal" 
+                        data-bs-target="#artModal"
+                        data-title="<?= $card['title'] ?>"
+                        data-client="<?= $card['client'] ?>"
+                        data-categories="<?= $card['category_for_display'] ?>"
+                        data-src="">
         <?php if ($card['images']) :  ?>
             <img src="<?php echo esc_url($card['images'][0]['sizes']['large']); ?>" alt="<?php echo esc_attr($card['images'][0]['alt']); ?>" />
         <?php endif; ?>

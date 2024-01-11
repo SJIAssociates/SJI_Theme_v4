@@ -22,6 +22,11 @@
       margin: 0;
     }
 
+    @include break(sm) {
+      margin-bottom: 0.75em;
+      margin-top: -3em;
+    }
+
     button {
       background: transparent;
       border: 0;
@@ -89,12 +94,18 @@
     overflow: hidden;
     position: relative;
 
+    aspect-ratio: 3/2;
+    background-color: #ccc;
+
     @include break(lg) {
       aspect-ratio: 1 / 1;
     }
 
     a {
       text-decoration: none;
+      display: block;
+      width: 100%;
+      height: 100%;
 
       > * {
         transition: $transition;
@@ -102,12 +113,22 @@
     }
     &.landscape {
       .hero__banner {
-        min-height: 410px;
-        grid-row: span 1;
+        //min-height: 410px;
+        //grid-row: span 1;
+
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 100%;
 
         video {
-          height: 410px;
+          //height: 410px;
           object-fit: cover;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
         }
 
         @include break(lg) {
@@ -118,14 +139,11 @@
 
     &.portrait {
       grid-row: span 2;
+      aspect-ratio: 4/5.5;
 
       .hero__banner {
         min-height: 103vh;
-
-        video {
-          height: 103vh;
-          object-fit: cover;
-        }
+        min-height: 100%;
 
         @include break(lg) {
           min-height: 100%;

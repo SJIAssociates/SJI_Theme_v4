@@ -222,6 +222,8 @@
             .bullets-container {
                 display: flex;
                 margin-top: 50px;
+                font-size: 1.25em;
+                line-height: 1.6em;
 
                 @include break(lg) {
                     gap: 12px;

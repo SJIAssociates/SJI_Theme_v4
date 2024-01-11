@@ -23,7 +23,7 @@
     h2 {
         font-size: 5vw;
         line-height: 4.7vw;
-        letter-spacing: 1px;
+        letter-spacing: 0;
         font-weight: 800;
 
         @include break(md) {
@@ -81,6 +81,20 @@
 
         @include break(sm) {
             height: 75vh;
+            padding-top: 100px;
+        }
+    }
+}
+
+.page-id-19 {
+    .animated-banner {
+        @include break(sm) {
+            padding-top: 100px;
+        }
+        br {
+            @include break(sm) {
+               display: none;;
+            }
         }
     }
 }

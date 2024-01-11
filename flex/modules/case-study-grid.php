@@ -3,7 +3,7 @@
 
 
 // load this number initially
-$num_onLoad = 7;
+$num_onLoad = 8;
 
 // load this number when 'show more' clicked
 $num_onMore = 4;
@@ -15,7 +15,7 @@ $num_onMore = 4;
 // ) );
 
 $category = get_sub_field('category_exceptions');
-$term_id = $category->term_id;
+//$term_id = $category->term_id;
 
 $gridArgs = array(
     'post_type' => 'work',
@@ -113,12 +113,17 @@ function array_pend( $arr =[], $pre = '', $post = '' )
                     echo implode( ' ', array_pend( wp_get_post_terms( $post->ID, 'case_study_category', array( 'fields' => 'slugs' ) ), 'js_filter_item-', '' ));
                     ?>">
                     <a href="<?php the_permalink();?>" aria-label="<?php the_title();?>">
-                        <?php $case_study_grid_asset = get_field( 'case_study_grid_asset' );
+                        <?php
+                        $case_study_grid_asset = get_field( 'case_study_grid_asset' );
+
                         $asset_url = esc_url( $case_study_grid_asset['url'] );
                         $asset_name = esc_url( $case_study_grid_asset['filename'] );
+                        
                         $filetype = wp_check_filetype($asset_name)['ext'];
+
                         $mobile_asset = get_field( 'mobile_asset' );
                         $mobile_url = esc_url( $mobile_asset['url']);
+
                         ?>
                         <?php if ( $case_study_grid_asset ) : ?>
                             <?php if (($filetype == "mp4") || ($filetype == "webm")) { ?>
@@ -163,15 +168,15 @@ function array_pend( $arr =[], $pre = '', $post = '' )
         wp_reset_postdata(); ?>
     </div>
     <a id="cs_view_more_key_art"
-                        data-quantity="3"
-                        href="/key-art"
-                        class="d-none">
-                        <div class="view-more__overlay"></div>
-                        <span class="btn btn--asterisk">View All Key Art</span>
-                    </a>
-                    <div id="js_filter_zero">
-                        There are no matching items.
-                    </div>
+        data-quantity="3"
+        href="/key-art"
+        class="d-none">
+        <div class="view-more__overlay"></div>
+        <span class="btn btn--asterisk">View All Key Art</span>
+    </a>
+    <div id="js_filter_zero">
+        <p class='text-center pt-10'>Uh oh! We're all out! Check back later to see more of our work, or <a href="/contact" title="contact">get in touch</a> if you're looking for something.</p>
+    </div>
 </div>
 
 <?php wp_reset_query(); ?>

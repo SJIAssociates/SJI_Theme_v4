@@ -104,6 +104,10 @@
             padding: 24px;
             background-color: $actual-white;
 
+            @include break(lg) {
+                padding: 0;
+            }
+
             p {
 
                 span {

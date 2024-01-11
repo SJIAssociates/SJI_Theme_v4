@@ -68,6 +68,7 @@ function filter_ShowMore( quantity, cat )
 
     if( candidates.length == 0 ) {
         $( '#js_filter_zero' ).fadeIn();
+        $('.btn--asterisk').fadeOut();
     } else {
         $( '#js_filter_zero' ).hide();
     }
