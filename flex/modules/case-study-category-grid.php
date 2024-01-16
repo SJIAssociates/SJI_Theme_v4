@@ -65,7 +65,7 @@ function renderSmallCard($card)
     <button data-src="<?php if ($card['images']) :  foreach ($card['images'] as $modal_gallery_image) : echo esc_url($modal_gallery_image['sizes']['large']) . ',';
                             endforeach;
                         endif; ?>" 
-                        class="category-grid__post category-grid__post--small js-bs-modal js_filter_item <? $card['category'] ?>"
+                        class="category-grid__post category-grid__post--small js-bs-modal js_filter_item <? echo $card['category'];  ?>"
                         data-bs-toggle="modal" 
                         data-bs-target="#artModal"
                         data-title="<?= $card['title'] ?>"
@@ -88,11 +88,11 @@ function renderSmallCard($card)
                 <div class="modal__slider-wrap">
                     <div class="modal__slider js-slick-modal"></div>
                 </div>
-                <div class="modal__content">
+                <!-- <div class="modal__content">
                     <h2 class="modal__project"></h2>
                     <p class="modal__client"></p>
                     <p class="modal__categories"></p>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
