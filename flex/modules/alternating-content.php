@@ -5,7 +5,7 @@ $styleType = get_sub_field('style_type');
 
 ?>
 
-<div class="alternating-content <?php echo get_sub_field('style_type'); if ( get_sub_field( 'orange_background' ) == 1 ) : echo 'alternating-content--orange'; endif; ?> <?php if ( get_sub_field( 'swap_orientation' ) == 1 ) : echo 'alternating-content--swap'; endif; ?>">
+<section class="alternating-content <?php echo get_sub_field('style_type'); if ( get_sub_field( 'orange_background' ) == 1 ) : echo 'alternating-content--orange'; endif; ?> <?php if ( get_sub_field( 'swap_orientation' ) == 1 ) : echo 'alternating-content--swap'; endif; ?>">
     <div class="container">
         <div class="row">
             <div class="col-lg-6 alternating-content__content">
@@ -36,4 +36,4 @@ $styleType = get_sub_field('style_type');
             </div>
         </div>
     </div>
-</div>
+</section>

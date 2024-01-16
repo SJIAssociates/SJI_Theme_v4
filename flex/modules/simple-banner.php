@@ -9,10 +9,10 @@ if( str_contains( $classes, "col-" ) ){
 }
 ?>
 
-<div class="simple-banner" <?php if( !empty($color) ){ 
+<section class="simple-banner" <?php if( !empty($color) ){ 
     echo "style='background-color: $color;'";
     } ?> 
-    data-module="simple banner">
+    data-module="Image">
     <div class="<?php echo $classes; ?>">
         <?php if ( $image ) : ?>
         <img class="simple-banner__img <?php if ( $alt_mobile_image ) : ?>d-none d-lg-block<?php endif;?>"
@@ -23,4 +23,4 @@ if( str_contains( $classes, "col-" ) ){
             alt="<?php echo esc_attr( $alt_mobile_image['alt'] ); ?>" />
         <?php endif; ?>
     </div>
-</div>
+</section>

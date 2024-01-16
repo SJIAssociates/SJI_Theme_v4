@@ -79,25 +79,6 @@ function renderSmallCard($card)
 <?php
 }
 ?>
-
-<div class="modal fade js-bs-artModal" id="artModal" tabindex="-1" aria-labelledby="artModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
-        <div class="modal-content">
-            <div class="modal-body">
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                <div class="modal__slider-wrap">
-                    <div class="modal__slider js-slick-modal"></div>
-                </div>
-                <!-- <div class="modal__content">
-                    <h2 class="modal__project"></h2>
-                    <p class="modal__client"></p>
-                    <p class="modal__categories"></p>
-                </div> -->
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="category-grid bg-color__<?php the_sub_field('background_color') ?>">
     <div class="container">
         <ul class="category-grid__filters">
@@ -174,4 +155,24 @@ function renderSmallCard($card)
         <?php endif; ?>
     </div>
 </div>
+
+
+<div class="modal fade js-bs-artModal" id="artModal" tabindex="-1" aria-labelledby="artModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="modal__slider-wrap">
+                    <div class="modal__slider js-slick-modal"></div>
+                </div>
+                <!-- <div class="modal__content">
+                    <h2 class="modal__project"></h2>
+                    <p class="modal__client"></p>
+                    <p class="modal__categories"></p>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
 <?php wp_reset_query(); ?>
