@@ -164,7 +164,7 @@
       font-weight: 800;
       position: relative;
       text-decoration: none;
-      text-transform: lowercase;
+      text-transform: capitalize;
 
       &:after {
         background-color: $white;

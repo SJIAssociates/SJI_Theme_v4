@@ -1,10 +1,6 @@
 html {
     scroll-behavior: smooth;
     font-size: 22px;
-
-    // @include break(md) {
-    //     font-size: 18px;
-    // }
 }
 
 body {
@@ -24,7 +20,7 @@ body {
         font-size: 3.409rem;
 
         @include break(md) {
-            font-size: 1.909rem;
+            font-size: 2rem;
         }
     }
 
@@ -60,12 +56,6 @@ body {
     }
     p {
         line-height: 1.27em;
-        // line-height: 1.6818rem;
-
-        // @include break(lg) {
-        //     font-size: 1.0555rem;
-        //     line-height: 1.35em;
-        // }
     }
 
     blockquote {
@@ -77,9 +67,14 @@ body {
 
         cite {
             display: block;
-            font-size: 0.909rem;
+            font-size: 0.8rem;
+            line-height: 1em;
             font-style: normal;
             margin: 50px 0 0;
+
+            @include break(sm) {
+                font-size: 0.7em;
+            }
         }
 
         &:before {

@@ -2,6 +2,14 @@
     font-display: swap;
     font-family: Anek Latin;
     font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/AnekLatin-Light.woff2');
+}
+
+@font-face {
+    font-display: swap;
+    font-family: Anek Latin;
+    font-style: normal;
     font-weight: 400;
     src: url('../fonts/AnekLatin-Regular.woff2');
 }
@@ -36,29 +44,6 @@
     font-style: normal;
     font-weight: 800;
     src: url('../fonts/AnekLatin-ExtraBold.woff2');
-}
-@font-face {
-    font-display: swap;
-    font-family: Anek Latin;
-    font-style: normal;
-    font-weight: 300;
-    src: url('../fonts/AnekLatin-Light.woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: BentonSans;
-    font-style: normal;
-    font-weight: 400;
-    src: url('../fonts/BentonSans-book.woff2');
-}
-
-@font-face {
-    font-display: swap;
-    font-family: BentonSans;
-    font-style: normal;
-    font-weight: 800;
-    src: url('../fonts/BentonSans-Black.woff2');
 }
 
 @font-face {
