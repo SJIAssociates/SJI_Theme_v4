@@ -1,9 +1,5 @@
 .simple-banner {
-    margin: 0 0 50px;
-
-    @include break(lg) {
-        margin: 0 0 30px;
-    }
+    margin: 0;
 
     &__img {
         height: auto;
