@@ -3,7 +3,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.0' );
+	define( '_S_VERSION', '1.1.2' );
 }
 
 if ( ! function_exists( 'sji_theme_setup' ) ) :
@@ -198,3 +198,13 @@ function my_mce_before_init_insert_formats( $init_array ) {
     }
 // Attach callback to 'tiny_mce_before_init'
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
+
+
+	
+function sji_password_post_filter( $where = '' ) {
+    if (!is_single() && !is_admin()) {
+        $where .= " AND post_password = ''";
+    }
+    return $where;
+}
+add_filter( 'posts_where', 'sji_password_post_filter' );
