@@ -1,8 +1,8 @@
 .related-posts {
-  padding: 50px 0;
+  padding: 5em 0;
 
-  @include break(lg) {
-    padding: 20px 0;
+  @include break(sm) {
+    padding: 2em 0;
   }
 
   h2 {
@@ -16,12 +16,13 @@
 
   &__grid {
     display: grid;
-    gap: 24px;
-    margin: 0 0 100px;
+    gap: 22px;
+    margin: 40px 0 100px;
     grid-template-columns: repeat(3, 1fr);
 
-    @include break(lg) {
+    @include break(sm) {
       gap: 10px;
+      margin: 0;
     }
 
     a {
@@ -33,6 +34,7 @@
       .hero__banner {
         height: 100%;
         min-height: auto;
+        margin: 0;
 
         @include break(lg) {
           margin-top: 0;
