@@ -158,7 +158,7 @@ function renderSmallCard($card)
 
 
 <div class="modal fade js-bs-artModal" id="artModal" tabindex="-1" aria-labelledby="artModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-xl modal-dialog-centered">
+    <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>

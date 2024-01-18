@@ -67,10 +67,13 @@ function filter_ShowMore( quantity, cat )
     var candidates = $( ".js_filter_candidate.js_filter_hide" );
 
     if( candidates.length == 0 ) {
+    
+        $('#cs_view_more_projects').removeClass('view-more-yes').fadeOut();
         $( '#js_filter_zero' ).fadeIn();
-        $('.btn--asterisk').fadeOut();
     } else {
         $( '#js_filter_zero' ).hide();
+        $('#cs_view_more_projects').addClass('view-more-yes');
+        $('#cs_view_more_projects').fadeIn();    
     }
 
     // show the next chunk

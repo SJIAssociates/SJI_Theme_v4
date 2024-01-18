@@ -122,7 +122,7 @@ function array_pend( $arr =[], $pre = '', $post = '' )
                         $filetype = wp_check_filetype($asset_name)['ext'];
 
                         $mobile_asset = get_field( 'mobile_asset' );
-                        $mobile_url = esc_url( $mobile_asset['url']);
+                        if( !empty($mobile_asset) ): $mobile_url = esc_url( $mobile_asset['url']); else: $mobile_url = ''; endif;
 
                         ?>
                         <?php if ( $case_study_grid_asset ) : ?>
@@ -137,19 +137,12 @@ function array_pend( $arr =[], $pre = '', $post = '' )
                                 </div>
                                 <div class="hero__banner grid-image-mobile" style="background-image:url('<?php echo $mobile_url; ?>')"></div>
                         <?php endif; ?>
-                            <?php if ( have_rows( 'animated_hero_text' ) ) : while ( have_rows( 'animated_hero_text' ) ) : the_row(); ?>
-                            <!--<div class="container js-gsap-hero">
-                                <p class="js-gsap-line1"><?php the_sub_field( 'line_1' ); ?></p>
-                                <p class="js-gsap-line2"><?php the_sub_field( 'line_2' ); ?></p>
-                                <p class="js-gsap-line3"><?php the_sub_field( 'line_3' ); ?></p>
-                            </div>-->
-                            <?php endwhile; endif; ?>
+
 
                         <div class="post-grid__post__overlay">
                             <div class="post-grid__post__info">
-                                <h3><?php the_field( 'client' ); ?>
-                                    <span><?php the_title();?></span></h3>
-                                    <p> <?php echo implode(' | ', $gridTerm_list); ?> </p>
+                                <h3><?php the_field( 'client' ); ?> <span><?php the_title();?></span></h3>
+                                <p> <?php echo implode(' | ', $gridTerm_list); ?> </p>
                             </div>
                         </div>
                         </a>
@@ -157,7 +150,7 @@ function array_pend( $arr =[], $pre = '', $post = '' )
                 <?php endwhile;
                 wp_reset_postdata(); ?>
                 <a id="cs_view_more_projects"
-                        data-quantity="3"
+                        data-quantity="4"
                         href="#"
                         class="<?php echo get_sub_field('view_more_button');?>">
                         <span class="btn btn--asterisk">View More Projects</span>
