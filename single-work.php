@@ -28,7 +28,7 @@ get_header(); ?>
         <?php if ( $hero_banner_asset ) : ?>
             <?php if (($filetype == "mp4") || ($filetype == "webm")) { ?>
                 <div class="hero__banner" style="position: relative;">
-                <video playsinline autoplay muted loop style="object-fit: cover; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
+                <video playsinline autoplay muted <?php if (get_field('video_loop') == true) : echo 'loop'; endif; ?> style="object-fit: cover; width: 100%; height: 100%; position: absolute; top: 0; left: 0;">
                     <source src="<?php echo $asset_url;?>" type="video/mp4">
                 </video>
             <?php }else{ ?>     
