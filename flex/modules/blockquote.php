@@ -2,7 +2,7 @@
 $class = (empty($image) ? 'col-sm-10 mx-auto' : 'col-lg' );
 $sectionClass = get_sub_field('padding');
 if( get_sub_field( 'flip_orientation' ) == 1 ): 
-    $sectionClass .= 'blockquote--flipped';
+    $sectionClass .= ' blockquote--flipped';
 endif;
 ?>
 

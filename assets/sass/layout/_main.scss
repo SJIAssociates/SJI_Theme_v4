@@ -26,12 +26,21 @@
  }
  .section-p {
     padding: 5em 0;
+    @include break(sm) {
+        padding: 3em 0;
+    }
  }
  .section-pt {
     padding: 5em 0 1em;
+    @include break(sm) {
+        padding: 3em 0 1em;
+    }
  }
  .section-pb {
     padding: 1em 0 5em;
+    @include break(sm) {
+        padding: 1em 0 3em;
+    }   
  }
  .section-md {
     pad: 3em 0;

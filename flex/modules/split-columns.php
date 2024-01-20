@@ -1,5 +1,6 @@
 <?php
 $left_image = get_sub_field( 'left_image' );
+$right_image = get_sub_field( 'right_image' );
 $classes = get_sub_field('padding'); 
 $color = get_sub_field('background_color');
 ?>
@@ -13,10 +14,12 @@ $color = get_sub_field('background_color');
                 <img class="w-full" src="<?php echo esc_url( $left_image['url'] ); ?>" alt="<?php echo esc_attr( $left_image['alt'] ); ?>" />
             <?php endif; ?>
 
-                <?php the_sub_field( 'left_content' ); ?>
+                <?php //the_sub_field( 'left_content' ); ?>
             </div>
             <div class='col-sm-6'>
-                <?php the_sub_field( 'right_content' ); ?>
+                <?php if ( $right_image ) : ?>
+                    <img class="w-full" src="<?php echo esc_url( $right_image['url'] ); ?>" alt="<?php echo esc_attr( $right_image['alt'] ); ?>" />
+                <?php endif; ?>
             </div>
         </div>
 </section>
