@@ -14,10 +14,10 @@ if( str_contains( $classes, "col-" ) ){
     } ?> 
     data-module="Image">
 
-    <?php if(get_sub_field('width') == "col-sm-10"|| "col-sm-9"): ?>
+    <?php if(get_sub_field('width') == "col-sm-10" || get_sub_field('width') ==  "col-sm-9"): ?>
         <div class='container'>
             <div class='row'>
-                <div class="<?php echo $classes; ?> ">
+                <div class="<?php echo $classes; ?>">
     <?php else: ?>
         <!-- Container Width or Window Width -->
         <div class="<?php echo $classes; ?>">
@@ -25,8 +25,15 @@ if( str_contains( $classes, "col-" ) ){
 
 
         <?php if ( $image ) : ?>
-        <img class="simple-banner__img <?php if ( $alt_mobile_image ) : ?>d-none d-lg-block<?php endif;?>"
+        <figure>
+            <img class="simple-banner__img <?php if ( $alt_mobile_image ) : ?>d-none d-lg-block<?php endif;?>"
             src="<?php echo esc_url( $image['url'] ); ?>" alt="<?php echo esc_attr( $image['alt'] ); ?>" />
+            <?php if($image['caption']): ?>
+                <figcaption>
+                    <?php echo $image['caption']; ?>
+                </figcaption>
+            <?php endif; ?>
+        </figure>
         <?php endif;
         if ( $alt_mobile_image ) : ?>
         <img class="simple-banner__img d-block d-lg-none" src="<?php echo esc_url( $alt_mobile_image['url'] ); ?>"

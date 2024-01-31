@@ -63,3 +63,23 @@
         padding: 50px 0 25px;
     }
 }
+
+.split-columns {
+    .row {
+        div:first-child {
+            padding-right: 0.5em;
+            @include break(md) {
+                padding-bottom: 0.5em;
+                padding-right: .75em;
+            }
+
+        }
+        div:last-child {
+            padding-left: 0.5em;
+            @include break(md) {
+                padding-top: 0.5em;
+                padding-left: .75em;
+            }
+        }
+    }
+}

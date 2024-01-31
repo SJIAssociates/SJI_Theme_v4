@@ -6,5 +6,9 @@
   img {
     width: 100%;
     height: auto;
+    margin-bottom: 1em;
+  }
+  img:last-child {
+    margin-bottom: 0;
   }
 }
