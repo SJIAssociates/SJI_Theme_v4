@@ -3,11 +3,12 @@ $videoURL = get_sub_field( 'video_url' );
 $mobileURL = get_sub_field('mobile_url');
 $viewStyle = get_sub_field('view_style');
 $btnUrl = get_sub_field('button_link');
+$classes = get_sub_field('padding') . " " . get_sub_field('margin');
 ?>
 
-<div class="video-module <?php echo $viewStyle; ?> <?php the_sub_field('padding'); ?> <?php the_sub_field('margin'); ?>">
+<section class="video-module <?php echo $viewStyle . ' ' . $classes; ?>" data-module="Video">
     <?php if ( $videoURL ) : ?>
-    <div class="video-module__container">
+    <div class="video-module__container <?php if($viewStyle == 'browser' ||$viewStyle == 'container' ): echo 'container'; endif ?>">
         <div class="browser-bar"></div>
         <video class="video-module__vid <?php if ($mobileURL) : echo 'vid-desktop'; endif; ?>" autoplay playsinline <?php if (get_sub_field('video_loop') == 'loop') : echo 'loop'; endif; ?> muted>
             <source src="<?php echo $videoURL; ?>" type="video/mp4">
@@ -22,4 +23,4 @@ $btnUrl = get_sub_field('button_link');
         <?php endif; ?>
     </div>
     <?php endif; ?>
-</div>
+</section>

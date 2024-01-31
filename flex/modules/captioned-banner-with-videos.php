@@ -1,28 +1,35 @@
-<?php $videos = get_sub_field('videos'); ?>
+<?php 
+$videos = get_sub_field('videos');
+$width = get_sub_field('width');
+$color = get_sub_field('background_color');
+$align = get_sub_field('align_copy');
+$padding = get_sub_field('padding');
+$vidoWidth = get_sub_field('column_split') ?: 'col-lg';
+?>
 
-<div class="captioned-banner bg-color__<?php the_sub_field('background_color') ?>">
-    <div class="container">
-        <?php if (get_sub_field('heading') || get_sub_field('caption')) : ?>
-            <div class="row">
-                <div class="col-lg-6 <?php if (get_sub_field('right_align_text') == 1) : echo 'offset-lg-6';
-                                        else : endif; ?>">
-                    <h3><?php the_sub_field('heading'); ?></h3>
-                    <p><?php the_sub_field('caption'); ?></p>
+<section class="captioned-banner <?php echo $padding; ?>"<?php if( !empty($color) ){ 
+    echo "style='background-color: $color;'";
+    } ?> 
+    data-module="Captioned Video">
+    <div class="<?php echo $width; ?>">
+        <div class='row'>
+            <?php if (have_rows('videos')) : ?>
+                <div class="<?php echo $vidoWidth; ?> captioned-banner__videos">
+                    <?php
+                    while (have_rows('videos')) : the_row();
+                        $video = get_sub_field('video');
+                    ?>
+                        <video playsinline autoplay muted loop>
+                            <source src="<?= $video['url'] ?>" type="video/mp4">
+                        </video>
+                    <?php endwhile; ?>
                 </div>
-            </div>
-        <?php endif; ?>
-
-        <?php if (have_rows('videos')) : ?>
-            <div class="captioned-banner__videos">
-                <?php
-                while (have_rows('videos')) : the_row();
-                    $video = get_sub_field('video');
-                ?>
-                    <video playsinline autoplay muted loop>
-                        <source src="<?= $video['url'] ?>" type="video/mp4">
-                    </video>
-                <?php endwhile; ?>
-            </div>
-        <?php endif; ?>
-    </div>
-</div>
+            <?php endif; ?>
+            <?php if(get_sub_field('caption')): ?>
+                <div class='col-lg <?php echo $align; ?>'>
+                    <?php the_sub_field('caption'); ?>
+                </div>
+            <?php endif; ?>
+        </div> <!-- row -->
+    </div><!-- container -->
+</section>
