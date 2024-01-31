@@ -378,6 +378,7 @@ jQuery(document).ready(function ($) {
     const fullWidth = elementsWidth + (gap * ($('.horizontal-scroll-grid__row-1 img').length - 1));
     const scrollTo = $(window).width() - (2 * paddingLeft) - fullWidth;
 
+    console.log("FUll width: " + fullWidth);
     horizontalAnimation = gsap.to(panels, {
       x: scrollTo,
       ease: "none",
@@ -467,7 +468,7 @@ jQuery(document).ready(function ($) {
     "stand apart."
   ];
   let counter1 = 0;
-  const wordTimer = setInterval(fancyTextHome, 800);
+  const wordTimer = setInterval(fancyTextHome, 1600);
   function fancyTextHome() {
     $('#word-swap-home').fadeOut(800, function() {
       $('#word-swap-home').html(wordSwapHome[counter1]);
@@ -489,7 +490,7 @@ jQuery(document).ready(function ($) {
     "elegantly<br class='mobile-only'> simple."
   ];
   let counter2 = 0;
-  const wordTimer2 = setInterval(fancyTextApproach, 1000);
+  const wordTimer2 = setInterval(fancyTextApproach, 1600);
   function fancyTextApproach() {
     $('#word-swap-approach').fadeOut(800, function() {
       $('#word-swap-approach').html(wordSwapApproach[counter2]);
