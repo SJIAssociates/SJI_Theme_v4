@@ -28,8 +28,8 @@ $gridArgs = array(
             'operator' => 'NOT IN'
         ),
     ),
-    // 'post_status' => 'publish' /// default
-    // 'orderby' => 'menu_order title'  /// 'date' is default
+    'post_status' => 'publish', /// default
+    'orderby' => 'menu_order',  /// 'date' is default
 );
 $gridQuery = new \WP_Query( $gridArgs );
 
