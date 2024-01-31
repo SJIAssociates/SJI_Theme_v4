@@ -2,41 +2,38 @@
     padding: 0;
     overflow: hidden;
 
-    //@include break(lg) {
-    //    max-height: 680px;
-    //    padding: 60px 0;
-
-       // @include break(lg) {
-       //     max-height: 340px;
-       // }
-   // }
     .panel-container {
         display: flex;
         flex-direction: column;
         gap: 24px;
 
-       // @include break(lg) {
-        //    height: 220px;
-        //    max-height: 220px;
-       // }
+        img {
+            max-width: none;
+
+            @include break(sm) {
+                max-height: 200px;
+            }
+        }
+
     }
     padding: 120px 0;
+
+    @include break(lg) {
+        padding: 2em 0;
+    }
 
     &.desktop {
         display: block;
 
-       // @include break(lg) {
-       //     display: none;
-       // }
     }
     &__row-1, &__row-2 {
         display: flex;
         gap: 24px;
         padding-left: 100px;
 
-        @include break(lg) {
-            padding-left: 0;
-           // height: 50%;
+        @include break(sm) {
+            padding-left: 1em;
+            padding-right: 1em;
         }
     }
 }
