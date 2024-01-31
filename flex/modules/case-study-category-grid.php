@@ -70,7 +70,7 @@ function renderSmallCard($card)
                         data-bs-target="#artModal"
                         data-title="<?= $card['title'] ?>"
                         data-client="<?= $card['client'] ?>"
-                        data-categories="<?= $card['category_for_display'] ?>"
+                        data-categories="<? //= $card['category_for_display'] ?>"
                         data-src="">
         <?php if ($card['images']) :  ?>
             <img src="<?php echo esc_url($card['images'][0]['sizes']['large']); ?>" alt="<?php echo esc_attr($card['images'][0]['alt']); ?>" />
@@ -99,7 +99,7 @@ function renderSmallCard($card)
                         $callbackForName = fn ($obj) => $obj->name;
                         $categories = array_map($callback, get_sub_field('category'));
                         $category = implode(' ', array_pend($categories, 'js_filter_item-', ''));
-                        $category_for_display = implode(' | ', array_map($callbackForName, get_sub_field('category_for_display')));
+                        //$category_for_display = implode(' | ', array_map($callbackForName, get_sub_field('category_for_display')));
                         $images_images = get_sub_field('images');
                         $title = get_sub_field('title');
                         $client = get_sub_field('client');
@@ -108,20 +108,18 @@ function renderSmallCard($card)
                             'images'               => $images_images,
                             'title'                => $title,
                             'client'               => $client,
-                            'category_for_display' => $category_for_display
+                            //'category_for_display' => $category_for_display
                         ]);
                     endwhile;
                 endif;
                 while ($catQuery->have_posts()) : $catQuery->the_post();
                     $permalink = get_permalink();
                     $title = get_the_title();
-                    // $thumbnail = get_the_post_thumbnail();
                     $keyart = get_field( 'key_art_asset' );;
                     $category = implode(' ', array_pend(wp_get_post_terms($post->ID, 'key_art_type', array('fields' => 'slugs')), 'js_filter_item-', ''));
                     array_push($bigCardsProcessed, [
                         'permalink' => $permalink,
                         'title'     => $title,
-                        // 'thumbnail' => $thumbnail,
                         'category' => $category,
                         'keyart' => $keyart,
                     ]);
