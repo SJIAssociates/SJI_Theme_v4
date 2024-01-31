@@ -4,8 +4,8 @@
 
     .btn-close {
         position: absolute;
-        right: 0px;
-        top: -35px;
+        right: -40px;
+        top: -15px;
         filter: invert(100%);
         z-index: 999;
     }
@@ -24,13 +24,17 @@
 
     &__slider-wrap {
         flex-basis: 100%;
-        height: 730px;
-        width: 50%;
+        height: 700px;
+        width: 70%;
+
+        @include break(lg) {
+            height: 730px;
+        }
     }
 
     &__slider {
         flex-basis: 50%;
-        height: 600px;
+        height: 800px;
         position: relative;
 
         figure {
@@ -132,7 +136,7 @@
                     order: 1;
 
                     .modal__slider {
-                            height: 400px;
+                            height: 700px;
                             margin-top: 75px;
                     }
 

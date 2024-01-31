@@ -3,7 +3,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.1.4' );
+	define( '_S_VERSION', '1.2.2' );
 }
 
 if ( ! function_exists( 'sji_theme_setup' ) ) :
