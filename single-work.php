@@ -1,6 +1,13 @@
 <?php
 //Case Study post template 
-get_header(); ?>
+get_header();
+
+$hero_banner_asset = get_field( 'hero_banner_asset' ); 
+$asset_url = esc_url( $hero_banner_asset['url'] );
+$asset_name = esc_url( $hero_banner_asset['filename'] );
+$filetype = wp_check_filetype($asset_name)['ext'];
+
+?>
 
 <main class="global-main">
     <div class="hero hero--single">
@@ -20,11 +27,7 @@ get_header(); ?>
                 </div>
             </div>
         </div>
-        <?php $hero_banner_asset = get_field( 'hero_banner_asset' ); 
-            $asset_url = esc_url( $hero_banner_asset['url'] );
-            $asset_name = esc_url( $hero_banner_asset['filename'] );
-            $filetype = wp_check_filetype($asset_name)['ext'];
-        ?>
+
         <?php if ( $hero_banner_asset ) : ?>
             <?php if (($filetype == "mp4") || ($filetype == "webm")) { ?>
                 <div class="hero__banner" style="position: relative;">
@@ -35,13 +38,14 @@ get_header(); ?>
                 <div class="hero__banner" style="background-image:url('<?php echo $asset_url;?>');">
             <?php } ?> 
         <?php endif; ?>
-            <?php if ( have_rows( 'animated_hero_text' ) ) : while ( have_rows( 'animated_hero_text' ) ) : the_row(); ?>
-            <div class="container js-gsap-hero">
-                <p class="js-gsap-line1"><?php the_sub_field( 'line_1' ); ?></p>
-                <p class="js-gsap-line2"><?php the_sub_field( 'line_2' ); ?></p>
-                <p class="js-gsap-line3"><?php the_sub_field( 'line_3' ); ?></p>
-            </div>
-            <?php endwhile; endif; ?>
+            <?php if ( have_rows( 'animated_hero_text' ) ) : while ( have_rows( 'animated_hero_text' ) ) : the_row();
+             if(get_sub_field('line_1')): ?>
+                <div class="container js-gsap-hero">
+                    <p class="js-gsap-line1"><?php the_sub_field( 'line_1' ); ?></p>
+                    <p class="js-gsap-line2"><?php the_sub_field( 'line_2' ); ?></p>
+                    <p class="js-gsap-line3"><?php the_sub_field( 'line_3' ); ?></p>
+                </div>
+            <?php endif; endwhile; endif; ?>
         </div>
     </div>
 
