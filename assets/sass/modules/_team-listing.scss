@@ -24,6 +24,7 @@
 
         @include break(lg) {
             grid-template-columns: repeat(2, 1fr);
+            gap: 30px 17px;
         }
     }
 
@@ -34,10 +35,18 @@
         p {
             margin: 0;
             font-size: 1rem;
-            line-height: 1.27rem;
+            line-height: 1.2rem;
+
+            @include break(lg) {
+                line-height: 1.1rem;
+            }
 
             strong {
-                font-size: 1.3181rem;
+                font-size: 1.25rem;
+
+                @include break(lg) {
+                    font-size: 1rem;
+                }
             }
         }
 
@@ -47,6 +56,11 @@
             overflow: hidden;
             position: relative;
             width: 100%;
+
+            @include break(lg) {
+                margin-bottom: 10px;
+            }
+
         }
 
         img {
