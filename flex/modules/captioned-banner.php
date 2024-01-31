@@ -7,7 +7,9 @@
         <div class="row">
             <div class="col-lg-6 <?php if ( get_sub_field( 'right_align_text' ) == 1 ) : echo 'offset-lg-6'; else : endif; ?>">
                 <h3><?php the_sub_field( 'heading' ); ?></h3>
-                <p><?php the_sub_field( 'caption' ); ?></p>
+                <?php if(get_sub_field( 'caption' ) ): ?>
+                    <p><?php the_sub_field( 'caption' ); ?></p>
+                <?php endif; ?>
             </div>
         </div>
         <?php endif;?>

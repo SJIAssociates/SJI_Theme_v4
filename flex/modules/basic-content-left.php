@@ -1,14 +1,20 @@
 <?php
 $offset = get_sub_field('offset');
 $color = get_sub_field('background_color');
+$width = get_sub_field('width');
+$padding = get_sub_field('padding');
 
 ?>
 
 
-<section class="bg-color__<?php echo $color; ?> basic-content-left <?php the_sub_field('class') ?>" data-module="basic">
+<section class="basic-content-left <?= get_sub_field('class') . " " . $padding; ?>"  <?php if( !empty($color) ){ 
+    echo "style='background-color: $color;'";
+    } ?>  data-module="basic-left">
     <div class="post-content container">
-        <div>
-            <?php the_sub_field('content'); ?>
+        <div class='row'>
+            <div class='<?php echo $width . " " . $offset; ?>'>
+                <?php the_sub_field('content'); ?>
+            </div>
         </div>
 
         <?php $columns = get_sub_field('columns');
