@@ -1,5 +1,5 @@
  .global-main {
-     padding-top: 100px;
+     padding-top: 80px;
 
      >* {
          background: #fff;
@@ -43,12 +43,18 @@
     }   
  }
  .section-md {
-    pad: 3em 0;
+    padding: 3em 0;
+ }
+ .section-pt__gutter {
+    padding-top: 1em;
+ }
+ .section-pb__gutter {
+    padding-bottom: 1em;
  }
 
  .single-career {
     .single-career-title {
-        margin: 135px 0 0;
+        margin-top: 135px;
     }
  }
 

@@ -1,10 +1,6 @@
 .navbar {
   padding: 10px 0;
 
-  @include break(lg) {
-    padding: 20px 0;
-  }
-
 }
 
 .navbar-brand {

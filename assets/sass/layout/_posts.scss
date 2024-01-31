@@ -1,7 +1,5 @@
 .post-content {
     margin: 0 auto;
-    //max-width: 815px;
-    //padding: 100px 0;
 
     a {
         color: $orange;
@@ -24,6 +22,7 @@
 
     .alignnone {
         display: block;
+        border: 1px solid #ccc;
     }
 
     .alignleft {
@@ -45,6 +44,7 @@
 .basic-content-left {
     &__columns {
         margin-top: 50px;
+        max-width: 58%;
 
         @include break(lg) {
             flex-direction: column;
@@ -64,13 +64,6 @@
         @include break(lg) {
             padding-top: 30px;
             padding-bottom: 30px;
-        }
-        div {
-            width: 75%;
-
-            @include break(lg) {
-                width: 100%;
-            }
         }
         h3 {
             @include break(lg) {
@@ -93,7 +86,6 @@
             color: $black;
         }
         p {
-            color: $black;
             margin-bottom: 0.75rem;
 
             @include break(xxl) {
@@ -117,45 +109,64 @@
             margin: 3rem 0 2rem;
         }
     }
-    &--a-small-light {
-        h2 {
-            font-size: 24px;
-        }
-        .post-content {
-            p {
-                font-size: 27px;
-            }
-        }
-    }
 }
 
 .post-content--full {
     h2 {
-        font-size: 39px;
+        font-size: 1.65rem;
         font-weight: 900;
         color: $black;
-        margin-bottom: 2rem;
+        margin-bottom: 0.5rem;
+        margin-top: 2rem;
 
         @include break(lg) {
             font-size: 1.25rem;
             margin-bottom: 1rem;
         }
     }
-    p {
-        margin-bottom: 2.6rem;
-        line-height: 1.27rem;
+    ul,ol {
+        @include break(lg) {
+            padding-left: 1em;
+        }
     }
-    li {
-        line-height: 1.27rem;
+    p {
+        margin-bottom: 1rem;
+    }
+    a {
+        color: $black;
     }
 }
 
 .single-post {
     .hero--single h1 {
-        font-size: 75px;
+        font-size: 2.5rem;
 
         @include break(lg) {
             font-size: 2rem;
         }
+    }
+    .hero {
+        .avatar {
+            width: 80px;
+        }
+    }
+}
+
+.split-columns {
+    
+}
+
+.copy-bottom {
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    padding-left: 2em;
+
+    @include break(sm) {
+        padding-left: .75em;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
     }
 }
