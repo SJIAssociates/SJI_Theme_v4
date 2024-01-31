@@ -20,7 +20,7 @@ $postQuery = new WP_Query( $args );
                 <h3><?php the_title();?></h3>
                 <?php the_category();?>
                 <?php the_excerpt(); ?>
-                <button class="btn btn--asterisk">Read More</button>
+                <a  href="<?php the_permalink(); ?>" class="btn btn--asterisk">Read More</a>
             </div>
             <?php endwhile; wp_reset_postdata(); ?>
         </div>

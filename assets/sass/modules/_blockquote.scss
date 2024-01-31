@@ -22,8 +22,8 @@
         line-height: 1.35em;
 
         @include break(lg) {
-            padding: 30px 0 0;
-            font-size: 1rem;
+            padding: 30px 0;
+            font-size: 1.15rem;
             line-height: 1.35em;
         }
 
@@ -45,7 +45,8 @@
         order: 2;
 
         @include break(lg) {
-            order: initial;
+            //order: initial; Taken out bc 50at50;
+            margin-bottom: 30px;
         }
     }
 }

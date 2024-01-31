@@ -16,8 +16,8 @@
 
   &__grid {
     display: grid;
-    gap: 22px;
-    margin: 40px 0 100px;
+    gap: 1em;
+    margin: 40px 0 0;
     grid-template-columns: repeat(3, 1fr);
 
     @include break(sm) {
@@ -76,6 +76,7 @@
     .btn--asterisk {
         margin-bottom: 0;
         margin-left: auto;
+        aspect-ratio: auto;
     }
     &:hover img {
       filter: grayscale(100%);
