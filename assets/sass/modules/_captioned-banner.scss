@@ -1,5 +1,5 @@
 .captioned-banner {
-    padding: 100px 0;
+    //padding: 100px 0;
 
     &.padding-top-none {
         padding: 0 0 50px;
@@ -25,20 +25,50 @@
 
     img {
         width: 100%;
+        margin: 1em 0;
 
         @include break(lg) {
-            margin: 30px 0;
+            margin: 1em 0;
         }
     }
     &__videos {
         display: flex;
         justify-content: space-between;
-        margin-top: 100px;
-        margin-bottom: 60px;
+        margin-top: 0;
+        margin-bottom: 0;
         video {
-            width: 33%;
+            width: 100%;
+        }
+
+    }
+
+    .skinny-container {
+        width: 75%;
+        padding-right: .75em;
+        padding-left: .75em;
+        margin: 0 auto;
+
+        .captioned-banner__videos {
+            margin-top: 0 !important;
         }
     }
+
+    .middle {
+        flex-direction: column;
+        display: flex;
+        align-self: center;
+    }
+
+    .bottom {
+        flex-direction: column;
+        display: flex;
+        align-self: end;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+
     @include break(md) {
         &__videos {
             margin-top: 50px;

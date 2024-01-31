@@ -1,5 +1,9 @@
 .careers-grid {
-    padding: 100px 0;
+    padding: 8em 0 5em;
+
+    @include break(sm) {
+        padding: 5em 0;
+    }
 
     h3 {
         margin: 0 0 30px;

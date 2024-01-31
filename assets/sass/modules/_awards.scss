@@ -26,11 +26,11 @@
             h2 {
                 text-align: center;
                 width: 100%;
-                font-size: 1.090rem;
+                font-size: 2rem;
                 margin-bottom: 0;
 
                 @include break(lg) {
-                    font-size: 2.25rem;
+                    font-size: 1.5rem;
                 }
             }
         }
