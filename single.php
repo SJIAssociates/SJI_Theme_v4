@@ -32,21 +32,19 @@ $author_title = get_field('title', 'user_'. $author_id );
     <?php endif; ?>
 
     <?php if (have_rows('modular_content')) : ?>
-        <section class="post-content">
-            <div class="container post__container">
-                <div class="row">
-                    <div class="col-sm-12">
+        <div class="post-content">
+        <section class="container post__container">
+            <div class="col-sm-8">
                         <?php include get_theme_file_path('flex/modular-content.php'); ?>
-                    </div>
-                </div>  <!-- row -->
             </div> <!-- container -->
         </section>
+    </div>
         <section class="latest-insights-section">
-            <?php include get_theme_file_path('flex/modules/latest-insights.php'); ?>
+            <?php //include get_theme_file_path('flex/modules/latest-insights.php'); ?>
         </section> <!-- row -->
     <? endif; ?>
 
-    <?php get_template_part('includes/footer-cta'); ?>
+    <?php //get_template_part('includes/footer-cta'); ?>
 </main>
 
 <?php get_footer(); ?>

@@ -1,5 +1,5 @@
 .animated-banner {
-    padding: 190px 0 135px;
+    padding: 250px 0 135px; //250 was 190
     z-index: 10;
 
     @include break(lg) {
@@ -73,7 +73,7 @@
 }
 .page-id-6 {
     .animated-banner {
-        height: 80vh;
+        height: 85vh;
 
         @include break(lg) {
             height: 82vh;

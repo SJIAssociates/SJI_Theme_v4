@@ -23,6 +23,7 @@
     .alignnone {
         display: block;
         border: 1px solid #ccc;
+        width: 100%;
     }
 
     .alignleft {
@@ -45,6 +46,10 @@
     &__columns {
         margin-top: 50px;
         max-width: 58%;
+
+        div {
+            padding-right: 10px;
+        }
 
         @include break(lg) {
             flex-direction: column;
@@ -143,6 +148,11 @@
 
         @include break(lg) {
             font-size: 2rem;
+        }
+    }
+    .post-content {
+        > .container {
+            padding: 0;
         }
     }
     .hero {
