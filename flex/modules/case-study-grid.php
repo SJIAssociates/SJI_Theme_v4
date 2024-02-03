@@ -6,7 +6,7 @@
 $num_onLoad = 8;
 
 // load this number when 'show more' clicked
-$num_onMore = 4;
+$num_onMore = 8;
 
 
 // $gridTerms = get_terms( array(
@@ -58,15 +58,7 @@ function array_pend( $arr =[], $pre = '', $post = '' )
 
 </style>
 
-<div class="post-grid bg-color__<?php the_sub_field('background_color') ?> <?php if ( get_sub_field( 'small_margins' ) == 1 ) : ?>post-grid--small-margins<?php endif; ?>">
-    <div class="container">
-        <a id="cs_see_more_work"
-            data-quantity="3"
-            href="/work"
-            class="d-<?php echo get_sub_field('see_more_work_button');?>">
-            <span class="btn btn--asterisk">See More Work</span>
-        </a>
-    </div>
+<section class="post-grid bg-color__<?php the_sub_field('background_color') ?> <?php if ( get_sub_field( 'small_margins' ) == 1 ) : ?>post-grid--small-margins<?php endif; ?>">
     <div class="container">
         <?php
         $gridHeadline = get_sub_field( 'grid_headline' );
@@ -160,16 +152,23 @@ function array_pend( $arr =[], $pre = '', $post = '' )
             <?php endif;
         wp_reset_postdata(); ?>
     </div>
-    <a id="cs_view_more_key_art"
-        data-quantity="3"
-        href="/key-art"
-        class="d-none">
-        <div class="view-more__overlay"></div>
-        <span class="btn btn--asterisk">View All Key Art</span>
-    </a>
+
+    <div class="container">
+        <a id="cs_see_more_work"
+            href="/work"
+            class="d-<?php echo get_sub_field('see_more_work_button');?>">
+            <span class="btn btn--asterisk">View More Work</span>
+        </a>
+            <a id="cs_view_more_key_art"
+            href="/key-art"
+            class="d-none">
+            <div class="view-more__overlay"></div>
+            <span class="btn btn--asterisk">View All Key Art</span>
+        </a>
+    </div>   
     <div id="js_filter_zero">
-        <p class='text-center pt-10'>Uh oh! We're all out! Check back later to see more of our work, or <a href="/contact" title="contact">get in touch</a> if you're looking for something.</p>
+        <p class='text-center pt-10'>Interested in seeing more work? <a href="/contact" title="contact">Get in touch</a>.</p>
     </div>
-</div>
+</section>
 
 <?php wp_reset_query(); ?>

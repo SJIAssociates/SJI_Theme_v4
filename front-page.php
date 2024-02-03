@@ -8,7 +8,7 @@ get_header(); ?>
         <i id="close-icon" class="fa-regular fa-xmark"></i>
         <div class="hero__video-wrap">
             <div id="video-player" class="hero__video">
-                <video id="hero-video" autoplay muted>
+                <video id="hero-video" autoplay muted playsinline>
                     <source src="<?php echo get_template_directory_uri()?>/assets/vid/SJI-Opening.mp4" type="video/mp4">
                 </video>
             </div>

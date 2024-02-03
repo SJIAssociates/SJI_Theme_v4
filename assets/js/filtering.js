@@ -11,7 +11,13 @@ jQuery(document).ready(function ($) {
     // when a filter button is picked...
     $( '.js-post-filter' ).on( 'click', function( e ) {
         var selectedCategory = $(this).attr( 'data-category' );
-        filter_CategoryReset( selectedCategory, onMore );
+        console.log(selectedCategory);
+        if(selectedCategory == 0) {
+            filter_CategoryReset( selectedCategory, onLoad );
+        } else {
+            filter_CategoryReset( selectedCategory, onMore );
+        }
+       
     });
     var onLoad = $( ".js-item-container" ).attr( 'data-count-onLoad' );
     var onMore = $( ".js-item-container" ).attr( 'data-count-onMore' );
@@ -30,7 +36,6 @@ jQuery(document).ready(function ($) {
 function filter_CategoryReset( cat, quantity, skipAnimation = false )
 {
     $=jQuery;
-
     // adjust all cards
     const doFilter = () => {
         const allCards = $( ".js_filter_item" );
@@ -39,6 +44,7 @@ function filter_CategoryReset( cat, quantity, skipAnimation = false )
             .addClass( 'js_filter_hide' );
             if( cat == undefined || cat == 'all' || cat == 0) {
                 // all are capable of showing
+                
                 allCards.addClass( 'js_filter_candidate' );
             } else {
                 $( ".js_filter_item-" + cat ).addClass( 'js_filter_candidate' );
