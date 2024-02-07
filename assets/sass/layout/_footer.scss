@@ -17,16 +17,33 @@
         a:not(.btn) {
             color: $black;
             text-decoration: none;
+            display: inline-block;
+            position: relative;
 
-            &:hover {
-                text-decoration: underline;
+            &::before {
+                position: absolute;
+                content: "";
+                background: $orange;
+                bottom: 4px;
+                width: 0;
+                left: 0;
+                height: 2px;    
+            }
+
+            &:hover, &:focus {
+                //text-decoration: underline;
+                &::before {
+                    width: 100%;
+                    transition: all 0.2s;
+                }
             }
 
             &.a--email {
-                text-decoration: underline;
+                //text-decoration: underline;
 
                 &:hover {
                     text-decoration: none;
+                    color: $black;
                 }
             }
         }

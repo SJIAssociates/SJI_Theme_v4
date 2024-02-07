@@ -2,7 +2,7 @@
 //global-footer template file
 ?>
 
-<footer class="global-footer">
+<footer class="global-footer" role="contentinfo">
     <div class="container global-footer__main">
         <div class="row">
             <div class="col-12 col-md-4">
@@ -25,12 +25,12 @@
             <div class="col-12 col-md-3">
                 <address>
                     SJI Associates <br>
-                    127 W 24th Street, 2nd Floor <br>
+                    <span style="padding-right: 5px;">127 W 24th Street,</span><span style="word-break: keep-all; display: inline-block"> 2nd Floor</span><br>
 					New York, NY 10011
                 </address>
-                <a href="tel:212.391.7770">212.391.7770</a> <br>
-                <a class="a--email" href="mailto:hello@sjiassociates.com">hello@sjiassociates.com</a> <br>
-                <a href="/contact" class="btn btn--asterisk">Get In Touch</a>
+                <a tabindex="0" href="tel:212.391.7770">212.391.7770</a> <br>
+                <a tabindex="0" class="a--email" href="mailto:hello@sjiassociates.com">hello@sjiassociates.com</a> <br>
+                <a tabindex="0" href="/contact" class="btn btn--asterisk">Get In Touch</a>
             </div>
         </div>
     </div>
