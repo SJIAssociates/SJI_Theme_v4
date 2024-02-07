@@ -47,6 +47,7 @@
         @include break(lg) {
             //order: initial; Taken out bc 50at50;
             margin-bottom: 30px;
+            padding-top: 1em;
         }
     }
 }

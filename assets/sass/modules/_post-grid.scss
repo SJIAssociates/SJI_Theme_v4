@@ -168,6 +168,7 @@
 
     .grid-image-desktop {
       display: block;
+      aspect-ratio: auto;
     }
     .grid-image-mobile {
       display: none;
@@ -326,7 +327,7 @@
     }
   }
   #cs_view_more_key_art {
-    bottom: -200px;
+    bottom: -1rem;
     width: 100%;
     text-decoration: none;
     grid-row: span 1;
