@@ -58,17 +58,12 @@
     }
     .post-content {
         margin: 0 auto;
-        padding-top: 80px;
-        padding-bottom: 80px;
+        //padding-top: 80px;
+        //padding-bottom: 80px;
 
         @include break(sm) {
             margin: 0;
             max-width: 100%;
-        }
-
-        @include break(lg) {
-            padding-top: 30px;
-            padding-bottom: 30px;
         }
         h3 {
             @include break(lg) {

@@ -2,12 +2,12 @@
 $offset = get_sub_field('offset');
 $color = get_sub_field('background_color');
 $width = get_sub_field('width');
-$padding = get_sub_field('padding');
-
+$paddingTop = get_sub_field('padding_top');
+$paddingBottom = get_sub_field('padding_bottom');
 ?>
 
 
-<section class="basic-content-left <?= get_sub_field('class') . " " . $padding; ?>"  <?php if( !empty($color) ){ 
+<section class="basic-content-left <?= get_sub_field('class') . " " . $paddingTop . " " .$paddingBottom; ?>"  <?php if( !empty($color) ){ 
     echo "style='background-color: $color;'";
     } ?>  data-module="basic-left">
     <div class="post-content container">
