@@ -141,12 +141,11 @@ function array_pend( $arr =[], $pre = '', $post = '' )
                     </div>
                 <?php endwhile;
                 wp_reset_postdata(); ?>
-                <a id="cs_view_more_projects"
-                        data-quantity="4"
-                        href="#"
-                        class="<?php echo get_sub_field('view_more_button');?>">
+                <?php if(get_sub_field('view_more_button') == TRUE ): ?>
+                    <a id="cs_view_more_projects" data-quantity="8" href="#">
                         <span class="btn btn--asterisk">View More Projects</span>
                     </a>
+                <?php endif; ?>
 
             </div>
             <?php endif;
@@ -154,12 +153,12 @@ function array_pend( $arr =[], $pre = '', $post = '' )
     </div>
 
     <div class="container">
-        <a id="cs_see_more_work"
-            href="/work"
-            class="d-<?php echo get_sub_field('see_more_work_button');?>">
+        <?php if( get_sub_field('see_more_work_button') == TRUE ): ?>
+        <a id="cs_see_more_work" href="/work">
             <span class="btn btn--asterisk">View More Work</span>
         </a>
-            <a id="cs_view_more_key_art"
+        <?php endif; ?>
+        <a id="cs_view_more_key_art"
             href="/key-art"
             class="d-none">
             <div class="view-more__overlay"></div>

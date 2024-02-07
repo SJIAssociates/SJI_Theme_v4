@@ -8,11 +8,16 @@
         <div class="related-posts__grid">
             <?php foreach ( $posts as $post ) : setup_postdata( $post ); ?>
             <a href="<?php the_permalink();?>" class="related-posts__figure">
-                <?php $similar_projects_img = get_field( 'similar_projects_image' );
-                    $asset_url = esc_url( $similar_projects_img['url'] );
-                ?>
-                <?php if ( $similar_projects_img ) : ?>
-                    <div class="hero__banner" style="background-image:url('<?php echo $asset_url;?>');"></div>
+                <?php
+                // $similar_projects_img = get_field( 'similar_projects_image' );
+                // $asset_url = esc_url( $similar_projects_img['url'] );
+
+                $mobile_asset = get_field( 'mobile_asset' );
+                if( !empty($mobile_asset) ): $mobile_url = esc_url( $mobile_asset['url']); else: $mobile_url = ''; endif;
+
+                
+                if ( $mobile_url ) : ?>
+                    <div class="hero__banner" style="background-image:url('<?php echo $mobile_url;?>');"></div>
                 <?php endif; ?>
             </a>
             <?php endforeach; wp_reset_postdata(); ?>
