@@ -74,7 +74,8 @@
         flex-direction: column;
         justify-content: center;
         margin: 40px 0 0;
-        min-height: 100vh;
+        //min-height: 100vh;
+        aspect-ratio: 1920/1080;
         overflow: hidden;
         box-sizing: content-box;
 
