@@ -3,7 +3,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.2.71' );
+	define( '_S_VERSION', '1.2.72' );
 }
 
 if ( ! function_exists( 'sji_theme_setup' ) ) :
@@ -125,13 +125,60 @@ function sji_theme_scripts() {
     wp_enqueue_script( 'slick-js', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'gsap-scroll-trigger', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'fitvid', get_template_directory_uri() . '/assets/js/jquery.fitvids.js', array('jquery'), _S_VERSION, true );
 
 	//should be last to make sure all libraries are loaded
 	wp_enqueue_script( 'cookie-js', get_template_directory_uri() . '/assets/js/js.cookie.min.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'makeway-custom-scripts-js', get_template_directory_uri() . '/assets/js/scripts.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'makeway-custom-scripts-js', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery','fitvid'), _S_VERSION, true );
 	wp_enqueue_script( 'filtering-js', get_template_directory_uri() . '/assets/js/filtering.js', array(), _S_VERSION, true );
+	if(is_front_page() ):
+		wp_enqueue_script( 'home-js', get_template_directory_uri() . '/assets/js/home.js', array('jquery'), _S_VERSION, true );
+	endif;
 }
 add_action( 'wp_enqueue_scripts', 'sji_theme_scripts' );
+
+/*
+ * 
+ * Admin Area Styles
+ * 
+ */
+function sji_admin_style() {
+	add_editor_style('/assets/style/admin.css');
+}
+add_action( 'admin_init', 'sji_admin_style' );
+
+/**
+ * 
+ * Custom Title Function for More Detailed Titles
+ *
+ */
+function sji_title() {
+	if (is_home()) {
+		if ($home = get_option('page_for_posts', true)) {
+			return get_the_title($home);
+		}
+		return __('Latest Posts', 'sage');
+	}
+	if(is_tax('tribe_events_cat') ){
+		return single_term_title();
+	}
+
+	if (is_archive() AND !is_category() AND !is_month() ) {
+		return post_type_archive_title();
+	}
+	if(is_category() or is_month() ){
+		return get_the_archive_title();
+	}
+
+	if (is_search()) {
+		return sprintf(__('Search Results for %s', 'sage'), get_search_query());
+	}
+	if (is_404()) {
+		return __('Not Found', 'sage');
+	}
+
+	return get_the_title();
+}
 
 //Register Options Page
 if( function_exists('acf_add_options_page') ) {
@@ -157,7 +204,9 @@ function add_style_select_button($buttons) {
 }
 add_filter('mce_buttons_2', 'add_style_select_button');
 
-// add custom styles to the WordPress editor
+/**
+ * Add custom styles to the WordPress editor
+ */
 function my_mce_before_init_insert_formats( $init_array ) {
     $style_formats = array(
     // These are the custom styles
@@ -199,8 +248,11 @@ function my_mce_before_init_insert_formats( $init_array ) {
 // Attach callback to 'tiny_mce_before_init'
 add_filter( 'tiny_mce_before_init', 'my_mce_before_init_insert_formats' );
 
-
-	
+/**
+ * 
+ * Remove Password Protected Posts from the main query
+ * 
+ */
 function sji_password_post_filter( $where = '' ) {
     if (!is_single() && !is_admin()) {
         $where .= " AND post_password = ''";
