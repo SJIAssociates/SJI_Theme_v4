@@ -1,15 +1,15 @@
-let horizontalAnimation = null;
-
 jQuery(document).ready(function ($) {
+
   //for homepage hero video
   //close vid on scroll
-	$('.home').bind('mousewheel', function(e) {
-		closeHomeVideo();	  
+	$('.home').on('scroll', function(e) {
+		closeHomeVideo();	 
+  
 	});
 
   function closeHomeVideo(){
+      resumeScrolling();
       $("#hero-video-container").fadeOut(400);
-      window.setTimeout(resumeScrolling, 500);
       animateLetters();
   }
 
@@ -19,18 +19,14 @@ jQuery(document).ready(function ($) {
 
   function openHomeVideo() {
     const video = document.getElementById('hero-video');
-    //If the window is less than 991 pixels 
     if ($(window).width() > 991 && !!video) {
 
       video.currentTime = 0;
-      console.log('showing modal');
+      console.log('showing modal')
       $("#hero-video-container").show();
+      console.log('playing video');
+      video.play();
       $('body').css("overflow-y", "hidden");
-
-      setTimeout(() => {
-        video.play();
-        console.log('Playing Video');
-      }, 500);
 
       //when video has ended, fade out container and resume normal scrolling
       $("#hero-video").on("ended", function() {
@@ -93,4 +89,3 @@ jQuery(document).ready(function ($) {
 }
 
 });
-
