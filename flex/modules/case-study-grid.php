@@ -120,8 +120,8 @@ function array_pend( $arr =[], $pre = '', $post = '' )
                         <?php if ( $case_study_grid_asset ) : ?>
                             <?php if (($filetype == "mp4") || ($filetype == "webm")) { ?>
                                 <div class="hero__banner grid-image-desktop">
-                                    <video playsinline autoplay muted loop>
-                                        <source src="<?php echo $asset_url;?>" type="video/mp4">
+                                    <video class="lazy" playsinline autoplay muted loop poster="<?php echo get_field('poster'); ?>">
+                                        <source data-src="<?php echo $asset_url;?>" type="video/mp4">
                                     </video>
                             <?php }else{ ?>
                                 <div class="hero__banner grid-image-desktop" style="background-image:url('<?php echo $asset_url; ?>')">

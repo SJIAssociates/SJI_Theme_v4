@@ -15,7 +15,7 @@
             <?php if ( $parallax_mobile_image ) : ?>
             <img class="parallax-background__img d-lg-none"
                 src=" <?php echo esc_url( $parallax_mobile_image['url'] ); ?>"
-                alt="<?php echo esc_attr( $parallax_mobile_image['alt'] ); ?>" />
+                alt="<?php echo esc_attr( $parallax_mobile_image['alt'] ); ?>"  width="500"/>
             <?php endif; ?>
         </div>
     </div>
