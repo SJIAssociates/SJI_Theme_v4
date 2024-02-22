@@ -5,7 +5,7 @@ get_header(); ?>
 <main class="global-main contact">
     <div class="hero">
         <div class="container">
-            <h1 class="h2">Let's Chat!</h1>
+            <h1 class="h2">Let&rsquo;s Chat!</h1>
         </div>
     </div>
     <div class="container">
