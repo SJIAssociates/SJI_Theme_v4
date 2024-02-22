@@ -6,7 +6,7 @@
     <div class="container global-footer__main">
         <div class="row">
             <div class="col-12 col-md-4">
-                <img src="<?php echo get_template_directory_uri();?>/assets/img/sji-logo-footer.svg" alt="">
+                <img src="<?php echo get_template_directory_uri();?>/assets/img/sji-logo-footer.svg" alt="SJI Associates | Strategic Creative" width="161" height="80">
             </div>
         </div>
         <div class="row">
@@ -28,7 +28,6 @@
                     <span style="padding-right: 5px;">127 W 24th Street,</span><span style="word-break: keep-all; display: inline-block"> 2nd Floor</span><br>
 					New York, NY 10011
                 </address>
-                <a tabindex="0" href="tel:212.391.7770">212.391.7770</a> <br>
                 <a tabindex="0" class="a--email" href="mailto:hello@sjiassociates.com">hello@sjiassociates.com</a> <br>
                 <a tabindex="0" href="/contact" class="btn btn--asterisk">Get In Touch</a>
             </div>
@@ -43,7 +42,7 @@
         </ul>
         <div class="global-footer__copyright">
             <p>Women Owned Enterprise</p>
-            <img src="<?php echo get_template_directory_uri();?>/assets/img/WBENC-logo.svg" alt="WBENC logo">
+            <img src="<?php echo get_template_directory_uri();?>/assets/img/WBENC-logo.svg" alt="WBENC logo" width="40" height="25">
             <p>© <?php echo date("Y");?> SJI Associates</p>
         </div>
     </div>
