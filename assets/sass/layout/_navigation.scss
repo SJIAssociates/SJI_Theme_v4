@@ -3,6 +3,10 @@
 
 }
 
+.nav-open {
+  overflow-y: hidden;
+}
+
 .navbar-brand {
   margin: 0;
   padding: 0;
@@ -290,11 +294,11 @@
       }
     }
 
-    @include break(lg) {
+    @include break(sm) {
       display: flex;
       gap: 23px;
       left: 0;
-      margin: 60px 0 0;
+      margin: 0;
       position: relative;
       bottom: auto;
     }

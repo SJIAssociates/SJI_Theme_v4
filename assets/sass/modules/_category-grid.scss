@@ -122,6 +122,7 @@
             margin: 0;
             transition: $transition;
             min-height: 100%;
+            aspect-ratio: auto;
 
             &:hover {
                 transform: scale(1.03);

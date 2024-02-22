@@ -25,16 +25,24 @@
         line-height: 4.7vw;
         letter-spacing: 0;
         font-weight: 800;
+        //opacity: 0;
+        //visibility:hidden;
 
         @include break(md) {
             font-size: 9vw;
             line-height: 10vw;
 
             &.home-hero {
-                font-size: 18vw;
+                font-size: 12vw;
                 line-height: .9em;
             }
 
+        }
+
+        @include break(sm) {
+            &.home-hero {
+                font-size: 18vw;
+            }          
         }
     }
     h3 {

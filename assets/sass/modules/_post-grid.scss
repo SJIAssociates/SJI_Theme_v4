@@ -68,8 +68,10 @@
     //grid-template-rows: repeat(5, 425px);
     position: relative;
 
-    @include break(lg) {
+    @include break(sm) {
       gap: 0.75rem;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: auto;
     }
 
     .btn--swap {
@@ -83,11 +85,6 @@
       @include break(lg) {
         width: 100%;
       }
-    }
-
-    @include break(lg) {
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: auto;
     }
   }
 
@@ -180,6 +177,7 @@
       }
       .grid-image-mobile {
         display: block;
+        aspect-ratio: 1/1;
       }
     }
 
@@ -264,15 +262,18 @@
       }
     }
 
-    &:hover .hero__banner {
+    &:hover .hero__banner,
+    &:focus .hero__banner {
       transform: scale(1.03);
     }
 
-    &:hover &__overlay {
+    &:hover &__overlay,
+    &:focus &__overlay, {
       opacity: 1;
     }
 
-    &:hover &__info {
+    &:hover &__info,
+    &:focus &__info {
       bottom: 0;
     }
   }

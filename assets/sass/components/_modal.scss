@@ -8,6 +8,11 @@
         top: -15px;
         filter: invert(100%);
         z-index: 999;
+
+        @include break(sm) {
+            top: 0;
+            right: 14px;
+        }
     }
 
     .modal-content {
@@ -136,8 +141,8 @@
                     order: 1;
 
                     .modal__slider {
-                            height: 700px;
-                            margin-top: 75px;
+                            height: 550px;
+                            margin-top: 0px; //75
                     }
 
                     .slick-arrow {
