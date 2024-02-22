@@ -8,10 +8,6 @@ $bg_color = get_field( 'background_color' );
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta property="og:url" content="<?php the_permalink();?>" />
-    <meta property="og:title" content="<?php the_title();?>" />
-    <meta property="og:description" content="<?php the_excerpt();?>" />
-    <meta property="og:image" content="<?php the_post_thumbnail_url();?>" />
     <?php wp_head(); ?>
 
     <!-- GA Google Analytics @ https://m0n.co/ga -->
@@ -22,20 +18,15 @@ $bg_color = get_field( 'background_color' );
 			gtag('js', new Date());
 			gtag('config', 'UA-8722603-1');
 		</script>
-
-			<script>
+		<script>
 			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
 		</script>
-				<style>
+		<style>
 			.no-js img.lazyload { display: none; }
 			figure.wp-block-image img.lazyloading { min-width: 150px; }
-							.lazyload, .lazyloading { opacity: 0; }
-				.lazyloaded {
-					opacity: 1;
-					transition: opacity 400ms;
-					transition-delay: 0ms;
-				}
-					</style>
+			.lazyload, .lazyloading { opacity: 0; }
+			.lazyloaded {opacity: 1;transition: opacity 400ms;transition-delay: 0ms;}
+		</style>
 </head>
 
 <body <?php body_class();?>>
@@ -43,7 +34,7 @@ $bg_color = get_field( 'background_color' );
         <div class="container">
             <nav id="navigation" class="navbar">
                 <a class="navbar-brand" href="/" aria-label="SJI logo - Home">
-                    <img src="<?php echo get_template_directory_uri();?>/assets/img/sji-logo.svg" alt="SJI logo">
+                    <img src="<?php echo get_template_directory_uri();?>/assets/img/sji-logo.svg" alt="SJI logo" width="64" height="80">
                 </a>
                 <div class="navbar-controls">
                     <?php wp_nav_menu(array(
