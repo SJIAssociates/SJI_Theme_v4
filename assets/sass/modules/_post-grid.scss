@@ -268,7 +268,7 @@
     }
 
     &:hover &__overlay,
-    &:focus &__overlay, {
+    &:focus &__overlay {
       opacity: 1;
     }
 
@@ -310,6 +310,8 @@
   }
   #cs_see_more_work {
     text-decoration: none;
+    display: inline-block;
+    margin-top: 1em;
 
     &.d-none {
       display: none;
