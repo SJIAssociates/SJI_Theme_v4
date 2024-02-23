@@ -12,6 +12,7 @@
         <div class="row">
             <div class="col-12 col-md-5">
                 <p>SJI Associates is a woman-owned, award-winning creative branding agency with over three decades of experience elevating the world’s most beloved brands and vital non-profit organizations.</p>
+                <img class='wbe-logo' src="<?php echo get_template_directory_uri();?>/assets/img/WBE_Seal_RGB.png" alt="WBENC logo" width="90" height="50">
             </div>
             <div class="col-12 col-md-3 offset-md-1">
                 <nav>
@@ -41,8 +42,7 @@
             <li><a href="https://www.linkedin.com/company/sji-associates/" target="_blank" aria-label="linkedin"><i class="fa-brands fa-linkedin"></i></a></li>
         </ul>
         <div class="global-footer__copyright">
-            <p>Women Owned Enterprise</p>
-            <img src="<?php echo get_template_directory_uri();?>/assets/img/WBENC-logo.svg" alt="WBENC logo" width="40" height="25">
+            <!-- <p>Women Owned Enterprise</p> -->
             <p>© <?php echo date("Y");?> SJI Associates</p>
         </div>
     </div>

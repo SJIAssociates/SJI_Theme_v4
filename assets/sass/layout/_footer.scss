@@ -12,6 +12,15 @@
 
         img {
             margin: 0 0 20px;
+
+        }
+
+        .wbe-logo {
+            margin-top: 35px;
+ 
+            @include break(lg) {
+                margin-top: 0;
+            }
         }
 
         a:not(.btn) {
@@ -111,11 +120,6 @@
         p {
             margin: 0;
             white-space: nowrap;
-        }
-
-        img {
-            width: 40px;
-            height: 25px;
         }
     }
     address {
