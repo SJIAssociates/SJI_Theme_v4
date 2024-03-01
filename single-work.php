@@ -48,19 +48,20 @@ $filetype = wp_check_filetype($asset_name)['ext'];
             <?php endif; endwhile; endif; ?>
         </div>
     </div>
-
-    <?php if(get_the_content()) :?>
-    <div class="post-content">
-        <div class="container">
-            <?php the_content();?>
-        </div>
-    </div>
+    <?php
+     if( post_password_required() ):  ?>
+        <section class="wrap container section-pt-2 section-pb-3" role="document">
+            <div class="content row">
+                <main class="main col-sm-10 offset-1" role="main">
+                    <?php echo get_the_password_form(); ?>
+                </main>
+            </div>
+        </section>
+    <?php else:
+        if( have_rows( 'modular_content' ) ):
+            include get_theme_file_path( 'flex/modular-content.php' );
+        endif; ?>
     <?php endif;?>
-
-    <?php if ( have_rows( 'modular_content' ) ): ?>
-    <?php include get_theme_file_path( 'flex/modular-content.php' ); ?>
-    <? endif; ?>
-
 </main>
 
 <?php get_footer(); ?>

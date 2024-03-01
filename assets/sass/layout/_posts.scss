@@ -195,3 +195,20 @@
         margin-bottom: 0;
     }
 }
+
+.post-password-form {
+    background: #eaeaea;
+    padding: 1em;
+    border-radius: 4px;
+    border: 1px solid #CCC;
+
+    input[type="submit"] {
+       padding: 0.75em 1.53em;
+       background-color: $orange;
+       color: white;
+
+       &:hover {
+        background-color: darken($orange, 15%);
+       }
+    }
+}
