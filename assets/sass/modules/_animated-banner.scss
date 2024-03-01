@@ -42,7 +42,7 @@
 
         @include break(sm) {
             &.home-hero {
-                font-size: 18vw;
+                font-size: 16vw;
             }          
         }
     }
@@ -83,9 +83,14 @@
         position: absolute;
         right: .75rem;
         bottom: 0;
-        width: 120px;
+        width: 105px;
         height: auto;
         opacity: 0.8;
+
+        @include break(sm) {
+            width: 90px;
+            bottom: -2rem;
+        }
     }
 }
 .page-id-6 {
