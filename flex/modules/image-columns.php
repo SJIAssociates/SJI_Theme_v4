@@ -6,11 +6,12 @@
         <div class="image-columns__grid">
             <?php foreach ( $columns_images as $columns_image ): ?>
             <figure class="image-columns__column">
-                <img src="<?php echo esc_url( $columns_image['sizes']['large'] ); ?>"
-                    alt="<?php echo esc_attr( $columns_image['alt'] ); ?>" />
+                <!-- <pre class="hidden"><?php //var_dump($columns_image); ?></pre> -->
+                <?php echo wp_get_attachment_image($columns_image['id'], 'full') ?>
             </figure>
             <?php endforeach;?>
         </div>
         <?php endif;?>
     </div>
 </div>
+
