@@ -7,7 +7,7 @@ get_header();
 
     <div class="hero">
         <div class="container">
-            <h1><?php echo sji_title();?></h1>
+            <h1><?php echo SJI\App\title();?></h1>
         </div>
     </div>
 

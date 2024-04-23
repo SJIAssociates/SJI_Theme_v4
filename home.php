@@ -1,13 +1,14 @@
 <?php
 //The default Blog Landing template
 get_header();
+require_once('functions.php');
 ?>
 
 <main class="global-main">
 
     <div class="hero">
         <div class="container">
-            <h1><?php echo sji_title();?></h1>
+            <h1><?php echo App::title();?></h1>
         </div>
     </div>
     <section class="blog-grid">
