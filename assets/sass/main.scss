@@ -18,6 +18,8 @@
 @import 'components/btn';
 @import 'components/hero';
 @import 'components/modal';
+@import 'components/filters';
+
 @import 'modules/animated-banner';
 @import 'modules/post-grid';
 @import 'modules/category-grid';
@@ -38,12 +40,14 @@
 @import 'modules/careers-grid';
 @import 'modules/grey-columns';
 @import 'modules/blog-grid';
-//@import 'modules/blockquote-full';
 @import 'modules/awards';
 @import 'modules/video-module';
 @import 'modules/video-grid.scss';
-@import 'modules/horizontal-scroll';
 @import 'modules/cards';
 @import 'modules/image-stack';
 @import 'modules/testimonials';
-@import 'modules/horizontal-scroll-grid';
+@import 'modules/counter';
+
+//@import 'modules/horizontal-scroll-grid';
+//@import 'modules/blockquote-full';
+//@import 'modules/horizontal-scroll';

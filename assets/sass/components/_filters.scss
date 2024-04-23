@@ -1,0 +1,119 @@
+#alm-filter-case_study_category-title {
+    display: none;
+    font-weight: bold;
+    font-size: 22px;
+    margin: 0;
+
+    @include break(sm) {
+        display: block;
+    }
+}
+
+.alm-listing::after {
+    content: inherit !important;
+}
+
+#alm-filter-case_study_category-inner {
+    padding: 0;
+    display: block;
+
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+        @include break(sm) { 
+            flex-direction: column;
+            gap: 0px;
+        }
+
+        li {
+            .field-radio::before {
+                opacity: 0 !important;
+            }
+            .field-radio::after{
+                opacity: 0 !important;
+            }
+    
+            .alm-filter--link {
+                font-size: 20px;
+                padding: 0;
+                color: $black;
+                font-family: $font-primary;
+
+                @include break(sm) {
+                    font-size: 18px;
+                }
+
+                &.active {
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}
+
+#alm-filters-reset-button {
+    //background-color: $black;
+    color: $black;
+    //padding: 0.25em 1.5em;
+    height: auto;
+    width: auto;
+    font-size: 20px;
+    align-items: center;
+    display: flex;
+    gap: 7px;
+    transition: $transition;
+    font-weight: bold;
+
+    &:before {
+        background-image: url('../img/asterisk-sm-orange.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        display: inline-block;
+        height: 32px;
+        transition: $transition;
+        width: 32px;
+        color: $black;
+    }
+
+    &:hover {
+        gap: 10px;
+
+        &:before {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.alm-filters-container button[type="reset"].hidden {
+    display: none !important;
+}
+
+#alm-filters-categoryfilter {
+    display: flex;
+    flex-direction: row;
+
+    @include break(sm) {
+        flex-direction: column;
+    }
+    .alm-filter--group {
+        flex: 1;
+    }
+    .alm-filters--controls {
+        width: auto;
+        margin: 0;
+
+        @include break(sm) {
+            justify-content: end;
+        }
+    }
+}
+
+@media screen and (min-width: 578px) {
+    #alm-filter-case_study_category-inner {
+        display: block !important;
+    }
+}
