@@ -14,8 +14,8 @@ $filetype = wp_check_filetype($asset_name)['ext'];
         <div class="container">
             <div class="row">
                 <div class="col-lg-6">
-                    <h3><?php the_field('client');?></h3>
-                    <h3><?php the_title();?></h3>
+                    <h1><?php the_field('client');?><br>
+                    <?php the_title();?></h1>
                 </div>
                 <div class="col-lg-6 d-lg-flex flex-row-reverse align-items-end">
                     <div class="hero__categories">
