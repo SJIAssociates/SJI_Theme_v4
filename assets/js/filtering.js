@@ -103,4 +103,3 @@ function filter_ShowMore( quantity, cat )
         $( "#cs_view_more_key_art" ).addClass("d-none");
     }
 }
-

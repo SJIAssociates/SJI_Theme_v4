@@ -420,9 +420,34 @@ jQuery(document).ready(function ($) {
 
 
 
+  window.almDone = function(){
+    $( '#js_filter_zero' ).fadeIn();
+    console.log('alm done');
+  };
+
+  window.almOnChange = function(alm){
+    console.log("Ajax Load More is loading...");
+
+  };
+
+  window.almFiltersActive = function(obj){
+    if(obj['case_study_category'] == 'key-art') {
+      $('#cs_view_more_key_art').removeClass('d-none').show();
+      $('.alm-btn-wrap').hide();
+      $( '#js_filter_zero' ).hide();
+    } else {
+      $('#cs_view_more_key_art').hide();
+    }
+  }
+
+  window.almComplete = function(alm){
+    $( '#js_filter_zero' ).hide();
+    lazyVideoLoader();
+  }
+
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+function lazyVideoLoader() {
   var lazyVideos = [].slice.call(document.querySelectorAll("video.lazy"));
 
   if ("IntersectionObserver" in window) {
@@ -447,4 +472,8 @@ document.addEventListener("DOMContentLoaded", function() {
       lazyVideoObserver.observe(lazyVideo);
     });
   }
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+  lazyVideoLoader();
 });
