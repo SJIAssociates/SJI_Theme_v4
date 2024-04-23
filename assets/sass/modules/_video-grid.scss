@@ -9,6 +9,16 @@
         justify-content: center;
     }
 
+    .cols-3 {
+        .video-grid__item {
+            flex-basis: calc(33% - 18px);
+            @include break(md) {
+                flex-basis: calc(50% - 18px);
+            }
+
+        }
+    }
+
     &__item {
         flex-basis: calc(42% - 18px);
         margin: 0;

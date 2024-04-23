@@ -1,6 +1,10 @@
 .post-grid {
   padding: 100px 0;
 
+  @include break(sm) {
+    padding: 2em 0;
+}
+
   &__intro {
     margin: 0 0 72px;
 

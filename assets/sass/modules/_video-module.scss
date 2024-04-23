@@ -10,21 +10,31 @@
     &.pb-6 {
         padding-bottom: 100px;
     }
-
-    .video-module__container {
-        //padding: 0 .75rem;
+    &.section-p {
+        padding: 5em 0;
+        @include break(sm) {
+            padding: 3em 0;
+        }
+    }
+    &.section-pt {
+        padding: 5em 0 1em;
+        @include break(sm) {
+            padding: 3em 0 1em;
+        }
+    }
+    &.section-pb {
+        padding: 1em 0 5em;
+        @include break(sm) {
+            padding: 1em 0 3em;
+        }   
+    }
+    &.section-md {
+        padding: 3em 0;
     }
 
     &.full-width {
         .video-module__container {
             width: 100%;
-
-            .browser-bar {
-                display: none;
-            }
-            .btn--asterisk {
-                display: none;
-            }
         }
     }
     &.container {
@@ -32,13 +42,6 @@
         //OK THIS IS A MESS BUT HEAR ME OUT. when a video is supposed to be container width, we still print the container class on the seciton but cancel out everything it does.
         max-width: initial;
         padding: 0;
-
-        .browser-bar {
-            display: none;
-        }
-        .btn--asterisk {
-            display: none;
-        }
     }
     &.left-align {
         max-width: 70%;

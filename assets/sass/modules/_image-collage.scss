@@ -1,9 +1,9 @@
 .image-collage {
-    padding: 24px 0 0;
+    padding: 22px 0 0;
 
     &__grid {
         display: grid;
-        gap: 24px;
+        gap: 22px;
         grid-template-columns: repeat(6, 1fr);
         grid-template-rows: repeat(2, 1fr);
 
