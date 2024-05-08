@@ -10,26 +10,30 @@ $bg_color = get_field( 'background_color' );
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?php wp_head(); ?>
 
-    <!-- GA Google Analytics @ https://m0n.co/ga -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-8722603-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
-			gtag('config', 'UA-8722603-1');
-		</script>
-		<script>
-			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
-		</script>
-		<style>
-			.no-js img.lazyload { display: none; }
-			figure.wp-block-image img.lazyloading { min-width: 150px; }
-			.lazyload, .lazyloading { opacity: 0; }
-			.lazyloaded {opacity: 1;transition: opacity 400ms;transition-delay: 0ms;}
-		</style>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WLCWLXT');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+    </script>
+    <style>
+        .no-js img.lazyload { display: none; }
+        figure.wp-block-image img.lazyloading { min-width: 150px; }
+        .lazyload, .lazyloading { opacity: 0; }
+        .lazyloaded {opacity: 1;transition: opacity 400ms;transition-delay: 0ms;}
+    </style>
 </head>
 
 <body <?php body_class();?>>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLCWLXT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header class="global-header <?php if($bg_color === "grey"):?>global-header--grey <?php endif; ?>">
         <div class="container">
             <nav id="navigation" class="navbar">
