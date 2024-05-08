@@ -21,7 +21,7 @@ $classes = get_sub_field('padding');
         </video>
         <?php endif; ?>
         <?php if ( $btnUrl ) : ?>
-            <span class="btn btn--asterisk"><a target="blank" href="<?php echo $btnUrl; ?>">View the Site</a></span>
+            <span class="btn btn--asterisk"><a target="blank" href="<?php echo esc_url($btnUrl['url']); ?>"><?php echo esc_html($btnUrl['title']); ?></a></span>
         <?php endif; ?>
     </div>
     
