@@ -9,7 +9,7 @@ $collage = get_field('images');
         <?php if ( have_rows('images') ) :  ?>
             <div class="image-collage__grid">
                 <?php while ( have_rows('images') ): the_row() ?>
-                    <figure class="image-collage__item">
+                    <figure class="image-collage__item <?php echo get_sub_field('orientation'); ?>">
                         <?php
                         $file = get_sub_field( 'file'); 
                         $file_name = $file['filename']; 

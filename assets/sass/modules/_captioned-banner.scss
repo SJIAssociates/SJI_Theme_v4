@@ -25,10 +25,11 @@
 
     img {
         width: 100%;
-        margin: 1em 0;
+        margin: 0;
+        background-color: #ccc;
 
         @include break(lg) {
-            margin: 1em 0;
+            margin: 0;
         }
     }
     &__videos {
@@ -38,8 +39,34 @@
         margin-bottom: 0;
         video {
             width: 100%;
+            margin-bottom: 1em;
         }
 
+    }
+
+    .row {
+        div:first-child{
+            padding-right: 0.5em;
+        }
+        div:last-child {
+            padding-left: 0.5em;
+        }
+    }
+
+    &.swap {
+        .row {
+            div:first-child{
+                padding-left: 0.5em;
+            }
+            div:last-child {
+                padding-right: 0.5em;
+                order: -1;
+
+                @include break(lg) {
+                    order: 0;
+                }
+            }
+        }
     }
 
     .skinny-container {
