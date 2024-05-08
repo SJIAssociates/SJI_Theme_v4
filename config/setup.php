@@ -3,7 +3,7 @@ namespace SJI\Setup;
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.3.2' );
+	define( '_S_VERSION', '1.3.6' );
 }
 
 if ( ! function_exists( 'sji_theme_setup' ) ) :
@@ -114,9 +114,8 @@ add_action( 'widgets_init', __NAMESPACE__.'\sji_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function sji_theme_scripts() {
-	wp_enqueue_style( 'wp-default-style', get_template_directory_uri() . '/style.css', array(), _S_VERSION );
+	//wp_enqueue_style( 'wp-default-style', get_template_directory_uri() . '/style.css', array(), _S_VERSION );
 	wp_enqueue_style( 'bootstrap-css', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css', array(), _S_VERSION );
-	wp_enqueue_style( 'slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), _S_VERSION );
     wp_enqueue_style( 'makeway-custom-style', get_template_directory_uri() . '/assets/sass/main.min.css', array(), _S_VERSION );
 
 	//scripts
@@ -131,7 +130,13 @@ function sji_theme_scripts() {
 	//should be last to make sure all libraries are loaded
 	wp_enqueue_script( 'cookie-js', get_template_directory_uri() . '/assets/js/js.cookie.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'makeway-custom-scripts-js', get_template_directory_uri() . '/assets/js/scripts.js', array('jquery','fitvid'), _S_VERSION, true );
-	wp_enqueue_script( 'filtering-js', get_template_directory_uri() . '/assets/js/filtering.js', array(), _S_VERSION, true );
+	
+	if(!is_front_page() ):
+		wp_enqueue_style( 'slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), _S_VERSION );
+		wp_enqueue_script( 'filtering-js', get_template_directory_uri() . '/assets/js/filtering.js', array(), _S_VERSION, true );
+
+	endif;
+	
 	if(is_front_page() ):
 		wp_enqueue_script( 'home-js', get_template_directory_uri() . '/assets/js/home.js', array('jquery'), _S_VERSION, true );
 	endif;
@@ -228,22 +233,39 @@ function sji_password_post_filter( $where = '' ) {
     return $where;
 }
 add_filter( 'posts_where', __NAMESPACE__.'\sji_password_post_filter' );
-
+/**
+ * 
+ * Change Default Transition Speed for ALM
+ * 
+ */
 function my_alm_speed(){	
 	return 500; // default = 250;
  }
  add_filter('alm_speed', __NAMESPACE__.'\my_alm_speed');
 
-
- 
-
+/**
+ * 
+ * Add the All Category to the Work Filters
+ * 
+ */
 add_filter( 'alm_filters_categoryfilter_case_study_category_before', function() {
-$values = array(
-	array(
-		'name' => __( 'All', 'framework' ),
-		'slug' => '' // Leave empty to reset the query.
-	)
-);
+	$values = array(
+		array(
+			'name' => __( 'All', 'framework' ),
+			'slug' => '' // Leave empty to reset the query.
+		)
+	);
 
-return $values;
+	return $values;
 });
+/**
+ * 
+ * Remove Password Protected Posts from the ALM
+ * 
+ */
+function alm_exclude_password_protected_posts( $alm_query ) {
+	if ( isset( $alm_query->query['alm_id'] ) && ! $alm_query->is_singular() ) {
+		$alm_query->set( 'has_password', false );
+	}
+}
+add_action( 'pre_get_posts', __NAMESPACE__.'\alm_exclude_password_protected_posts' );

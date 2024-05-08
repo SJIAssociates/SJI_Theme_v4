@@ -1,13 +1,14 @@
 <?php
 //The default Archive template
 get_header();
+require_once('functions.php');
 ?>
 
 <main class="global-main">
 
     <div class="hero">
         <div class="container">
-            <h1><?php echo SJI\App\title();?></h1>
+        <h1><?php single_term_title();?></h1>
         </div>
     </div>
 
